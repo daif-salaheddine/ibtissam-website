@@ -3,6 +3,17 @@
    script.js
 ══════════════════════════════════════════════════ */
 
+/* ─── ACTIVE TOP NAV LINK ───────────────────────── */
+(function () {
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.tn-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === page || (page === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
+})();
+
 /* ─── THEME TOGGLE ──────────────────────────────── */
 (function () {
   const html    = document.documentElement;
