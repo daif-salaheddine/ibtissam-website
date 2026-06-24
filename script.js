@@ -247,3 +247,15 @@ if (wm) {
     }
   }, { passive: true });
 }
+
+/* ─── EXPAND / COLLAPSE ─────────────────────────── */
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  /* store original label once */
+  btn.dataset.original = btn.textContent.trim();
+  btn.addEventListener('click', () => {
+    const body = btn.previousElementSibling;
+    const open = body.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Show less ' : btn.dataset.original + ' ';
+  });
+});
