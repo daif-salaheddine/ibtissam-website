@@ -40,73 +40,75 @@
     <section id="hero">
       <div class="hero-grid">
 
-        <div class="hero-left">
-          <div class="hero-eyebrow">EXECUTIVE PORTFOLIO, 2026</div>
-          <h1 class="hero-name">
-            <span class="name-first">Ibtissam</span>
-            <span class="name-last">Daif</span>
-          </h1>
-          <p class="hero-subtitle">Education &amp; Workforce Development Consultant, MBA, EN · FR · AR</p>
-
-          <div class="hero-stats">
-            <div class="stat stat--teal">
-              <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
-              <span class="stat-label">Years International Experience</span>
+        <!-- LEFT: full-height photo + text overlay -->
+        <div class="hero-photo-area">
+          <div class="photo-frame" id="photo-frame" title="Click to add photo">
+            <input type="file" id="photo-input" accept="image/*" aria-label="Upload portrait photo">
+            <div class="photo-placeholder" id="photo-placeholder">
+              <span class="photo-initials">I.D.</span>
+              <span class="photo-hint">Add photo</span>
             </div>
-            <div class="stat stat--gold">
-              <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
-              <span class="stat-label">Learners &amp; Professionals Coached</span>
-            </div>
-            <div class="stat stat--coral">
-              <span class="stat-number" data-target="60">0</span><span class="stat-suffix">%</span>
-              <span class="stat-label">Retention Increase at AUI</span>
-            </div>
-            <div class="stat stat--muted">
-              <div class="stat-lang">
-                <span>EN</span><span class="sep">·</span><span>FR</span><span class="sep">·</span><span>AR</span>
-              </div>
-              <span class="stat-label">Native Delivery Languages</span>
-            </div>
+            <img id="photo-img" class="photo-img" alt="Ibtissam Daif" hidden>
+            <div class="photo-overlay"><span>Change photo</span></div>
           </div>
-
-          <div class="hero-ctas">
-            <a href="work.html" class="cta-btn cta-primary">View Work</a>
-            <a href="story.html" class="cta-btn cta-secondary">Her Story</a>
+          <div class="hero-text-overlay">
+            <p class="hero-eyebrow">EXECUTIVE PORTFOLIO, 2026</p>
+            <h1 class="hero-name">
+              I'm Ibtissam,<br>
+              <em>an Education &amp;<br>Workforce Consultant</em>
+            </h1>
+            <p class="hero-tagline">Morocco · United States · Europe</p>
+            <a href="#identity" class="hero-scroll-btn" aria-label="Scroll down">↓</a>
           </div>
         </div>
 
-        <div class="hero-right" aria-hidden="true">
-          <div class="hero-right-inner"></div>
+        <!-- RIGHT: info panel -->
+        <div class="hero-panel">
+          <div class="hp-block">
+            <div class="hp-label">ABOUT ME</div>
+            <p>Educator, learning designer, and workforce consultant with 10+ years bridging Morocco and the United States.</p>
+            <a href="#identity" class="hp-more">More <span>→</span></a>
+          </div>
+          <div class="hp-block">
+            <div class="hp-label">MY WORK</div>
+            <p>Curriculum architecture, corporate L&amp;D, leadership masterclasses, delivered in EN · FR · AR.</p>
+            <a href="work.html" class="hp-more">View Work <span>→</span></a>
+          </div>
+          <div class="hp-block">
+            <div class="hp-label">CONNECT</div>
+            <div class="hp-social">
+              <a href="https://linkedin.com/in/ibtissamdaif" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+              <a href="mailto:ibtissamdaif02@gmail.com" aria-label="Email">@</a>
+              <a href="tel:+212671583498" aria-label="Phone">☎</a>
+              <a href="story.html" aria-label="Her Story">✦</a>
+            </div>
+          </div>
         </div>
 
       </div>
-
-      <a href="#identity" class="scroll-cue" aria-label="Scroll to next section">
-        <span class="scroll-line"></span>
-      </a>
     </section>
 
     <!-- ══ IDENTITY ══ -->
     <section id="identity">
       <div class="section-inner">
-        <div class="identity-split">
-
-          <div class="identity-photo">
-            <div class="photo-offset-block" aria-hidden="true"></div>
-            <div class="photo-frame reveal" id="photo-frame" title="Click to add photo">
-              <input type="file" id="photo-input" accept="image/*" aria-label="Upload portrait photo">
-              <div class="photo-placeholder" id="photo-placeholder">
-                <span class="photo-initials">I.D.</span>
-                <span class="photo-hint">Add photo</span>
-              </div>
-              <img id="photo-img" class="photo-img" alt="Ibtissam Daif" hidden>
-              <div class="photo-overlay"><span>Change photo</span></div>
-            </div>
-          </div>
-
-          <div class="identity-content">
+        <div class="identity-content">
             <span class="sec-num" aria-hidden="true">01</span>
             <h2 class="section-title reveal">Professional <em>Identity</em></h2>
+
+            <div class="hero-stats reveal">
+              <div class="stat stat--teal">
+                <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Years International Experience</span>
+              </div>
+              <div class="stat stat--gold">
+                <span class="stat-number" data-target="300">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Learners &amp; Professionals Coached</span>
+              </div>
+              <div class="stat stat--coral">
+                <span class="stat-number" data-target="60">0</span><span class="stat-suffix">%</span>
+                <span class="stat-label">Retention Increase at AUI</span>
+              </div>
+            </div>
 
             <blockquote class="identity-quote reveal">
               "I have always struggled with accepting things simply because that is the way they are,
@@ -168,8 +170,6 @@
                 <span class="ipl-arr">→</span>
               </a>
             </div>
-
-          </div>
 
         </div>
       </div>
