@@ -769,7 +769,6 @@ footer {
   width: 100vw;
   height: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 .slide-dots {
   position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
@@ -781,6 +780,10 @@ footer {
   transition: opacity .25s, background .25s, transform .25s;
 }
 .slide-dot.active { background: var(--teal); opacity: 1; transform: scale(1.35); }
+/* #narrative's overflow:hidden (ID specificity) overrides the general slide rule — fix it */
+.slides-track > #narrative { overflow-y: auto; }
+/* sec-num watermarks look out of place as full-screen slide decorations */
+.slides-track .sec-num { display: none; }
 
 /* ══════════════════════════════════════════════════
    RESPONSIVE
