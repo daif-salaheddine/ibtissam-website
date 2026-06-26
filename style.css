@@ -288,6 +288,11 @@ section:nth-child(even) { background: var(--surface2); }
 
 /* Left: full-height photo area */
 .hero-photo-area { position: relative; overflow: hidden; background: #05101e; }
+.hero-main-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
 .hero-photo-area #photo-frame {
   position: absolute; inset: 0;
   width: 100%; height: 100%;

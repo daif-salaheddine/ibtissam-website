@@ -201,40 +201,6 @@ if (scrollCue) {
   });
 }
 
-/* ─── PHOTO UPLOAD ──────────────────────────────── */
-(function () {
-  const frame       = document.getElementById('photo-frame');
-  const input       = document.getElementById('photo-input');
-  const placeholder = document.getElementById('photo-placeholder');
-  const img         = document.getElementById('photo-img');
-
-  if (!frame || !input || !img) return;
-
-  function applyPhoto(src) {
-    img.src = src;
-    img.removeAttribute('hidden');
-    placeholder.style.display = 'none';
-    frame.classList.add('has-photo');
-  }
-
-  /* restore from localStorage */
-  const saved = localStorage.getItem('ibtissam-photo');
-  if (saved) applyPhoto(saved);
-
-  input.addEventListener('change', () => {
-    const file = input.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = e => {
-      const src = e.target.result;
-      applyPhoto(src);
-      try { localStorage.setItem('ibtissam-photo', src); } catch (_) {}
-    };
-    reader.readAsDataURL(file);
-    input.value = ''; /* allow re-selecting same file */
-  });
-})();
 
 /* ─── SUBTLE PARALLAX ON HERO DIAGONAL ─────────── */
 const diag = document.querySelector('.hero-diagonal');
