@@ -315,4 +315,51 @@ document.querySelectorAll('.expand-btn').forEach(btn => {
     }
     startX = 0;
   }, { passive: true });
+
+  /* mouse drag — ignore drags starting inside mc-wrapper */
+  let mouseDown = false, mouseStartX = 0;
+  track.addEventListener('mousedown', e => {
+    if (e.target.closest('#mc-wrapper')) return;
+    mouseDown  = true;
+    mouseStartX = e.clientX;
+    track.style.cursor = 'grabbing';
+  });
+  document.addEventListener('mouseup', e => {
+    if (!mouseDown) return;
+    mouseDown = false;
+    track.style.cursor = '';
+    const dx = e.clientX - mouseStartX;
+    if (Math.abs(dx) > 60) goTo(current + (dx < 0 ? 1 : -1));
+  });
+
+  /* keyboard arrow keys */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+  });
+
+  /* on-screen arrow buttons */
+  const prevBtn = document.createElement('button');
+  const nextBtn = document.createElement('button');
+  prevBtn.className = 'slide-arrow slide-arrow--prev';
+  nextBtn.className = 'slide-arrow slide-arrow--next';
+  prevBtn.setAttribute('aria-label', 'Previous slide');
+  nextBtn.setAttribute('aria-label', 'Next slide');
+  prevBtn.textContent = '←';
+  nextBtn.textContent = '→';
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  document.body.appendChild(prevBtn);
+  document.body.appendChild(nextBtn);
+
+  function updateArrows() {
+    prevBtn.style.opacity = current === 0 ? '0' : '1';
+    prevBtn.style.pointerEvents = current === 0 ? 'none' : '';
+    nextBtn.style.opacity = current === slides.length - 1 ? '0' : '1';
+    nextBtn.style.pointerEvents = current === slides.length - 1 ? 'none' : '';
+  }
+
+  const _goTo = goTo;
+  goTo = function(idx) { _goTo(idx); updateArrows(); };
+  goTo(0);
 })();

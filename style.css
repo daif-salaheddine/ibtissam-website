@@ -763,7 +763,9 @@ footer {
   height: 100%;
   transition: transform .55s cubic-bezier(0.22,1,0.36,1);
   will-change: transform;
+  cursor: grab;
 }
+.slides-track:active { cursor: grabbing; }
 .slides-track > section {
   flex: 0 0 100vw;
   width: 100vw;
@@ -780,6 +782,23 @@ footer {
   transition: opacity .25s, background .25s, transform .25s;
 }
 .slide-dot.active { background: var(--teal); opacity: 1; transform: scale(1.35); }
+.slide-arrow {
+  position: fixed; top: 50%; z-index: 400;
+  transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--white); font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s, opacity .2s;
+}
+.slide-arrow:hover { background: var(--teal); border-color: var(--teal); color: #05101e; }
+.slide-arrow--prev { left: 1rem; }
+.slide-arrow--next { right: 1rem; }
+@media (max-width: 640px) {
+  .slide-arrow { width: 36px; height: 36px; font-size: .9rem; }
+  .slide-arrow--prev { left: .5rem; }
+  .slide-arrow--next { right: .5rem; }
+}
 /* #narrative's overflow:hidden (ID specificity) overrides the general slide rule — fix it */
 .slides-track > #narrative { overflow-y: auto; }
 /* sec-num watermarks look out of place as full-screen slide decorations */
