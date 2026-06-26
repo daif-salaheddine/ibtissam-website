@@ -270,3 +270,49 @@ document.querySelectorAll('.expand-btn').forEach(btn => {
     btn.textContent = open ? 'Show less ' : btn.dataset.original + ' ';
   });
 });
+
+/* ─── HORIZONTAL SLIDES ─────────────────────────── */
+(function () {
+  const track = document.querySelector('.slides-track');
+  if (!track) return;
+
+  const slides = [...track.querySelectorAll(':scope > section')];
+  const dotsEl = document.getElementById('slide-dots');
+  let current  = 0;
+  let startX   = 0, startY = 0;
+
+  /* build bottom dots */
+  const dots = slides.map((s, i) => {
+    const d = document.createElement('button');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', s.id);
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+    return d;
+  });
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(slides.length - 1, idx));
+    track.style.transform = `translateX(calc(-${current} * 100vw))`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    const bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = ((current / (slides.length - 1)) * 100) + '%';
+  }
+
+  /* touch swipe — ignore touches starting inside the mc-wrapper */
+  track.addEventListener('touchstart', e => {
+    if (e.target.closest('#mc-wrapper')) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    if (!startX) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      goTo(current + (dx < 0 ? 1 : -1));
+    }
+    startX = 0;
+  }, { passive: true });
+})();

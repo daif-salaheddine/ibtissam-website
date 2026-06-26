@@ -752,6 +752,37 @@ footer {
 }
 
 /* ══════════════════════════════════════════════════
+   HORIZONTAL SLIDES (work.html, story.html)
+══════════════════════════════════════════════════ */
+.slides-main {
+  overflow: hidden;
+  height: calc(100svh - 60px);
+}
+.slides-track {
+  display: flex;
+  height: 100%;
+  transition: transform .55s cubic-bezier(0.22,1,0.36,1);
+  will-change: transform;
+}
+.slides-track > section {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.slide-dots {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 400; display: flex; gap: .65rem; align-items: center;
+}
+.slide-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--muted); opacity: .4; cursor: pointer; border: none;
+  transition: opacity .25s, background .25s, transform .25s;
+}
+.slide-dot.active { background: var(--teal); opacity: 1; transform: scale(1.35); }
+
+/* ══════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════ */
 @media (max-width: 1050px) {
