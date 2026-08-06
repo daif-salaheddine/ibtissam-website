@@ -40,11 +40,10 @@ export default function Projects() {
       className="py-28 md:py-36"
       style={{ background: '#080706', borderTop: '1px solid rgba(242,235,224,0.07)' }}
     >
-      <div className="px-6 md:px-12 max-w-[1400px] mx-auto mb-16">
+      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto mb-16">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">07</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.1)' }} />
         </div>
         <h2
           data-reveal

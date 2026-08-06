@@ -59,12 +59,11 @@ export default function Timeline() {
     <section
       id="timeline"
       ref={sectionRef}
-      className="py-28 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto"
+      className="py-28 md:py-36 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto"
     >
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <span className="sec-num">05</span>
-        <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.1)' }} />
       </div>
       <h2
         className="font-cormorant font-light leading-tight mb-4"
@@ -153,10 +152,10 @@ export default function Timeline() {
                   </span>
                 )}
 
-                <p className="font-dm text-sm leading-relaxed" style={{ color: '#A89B88' }}>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#A89B88' }}>
                   {item.preview}
                 </p>
-                <p className="font-dm text-xs leading-relaxed mt-2" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#6B6055' }}>
                   {item.body}
                 </p>
 

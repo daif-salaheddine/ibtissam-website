@@ -55,7 +55,7 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid rgba(242,235,224,0.07)' : 'none',
       }}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto h-16 flex items-center justify-between">
         {/* Brand */}
         <a
           href="#hero"

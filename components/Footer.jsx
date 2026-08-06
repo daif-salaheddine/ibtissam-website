@@ -11,7 +11,7 @@ export default function Footer() {
         borderColor: 'rgba(242,235,224,0.07)',
       }}
     >
-      <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
           © {year} Ibtissam Daif · All rights reserved
         </span>

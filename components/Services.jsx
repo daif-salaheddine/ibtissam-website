@@ -39,21 +39,20 @@ export default function Services() {
       className="py-28 md:py-36"
       style={{ background: '#111009', borderTop: '1px solid rgba(242,235,224,0.07)' }}
     >
-      <div className="px-6 md:px-12 max-w-[1400px] mx-auto">
+      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">04</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.1)' }} />
         </div>
         <div className="mb-14 md:flex md:justify-between md:items-end gap-12">
           <h2
             className="font-cormorant font-light leading-tight"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
           >
-            What she can do <em>for your organization</em>
+            What I can do <em>for your organization</em>
           </h2>
-          <p className="mt-4 md:mt-0 font-dm text-sm leading-relaxed max-w-md" style={{ color: '#6B6055' }}>
-            Eight service areas. Each engagement is tailored, never templated. Delivered natively in English, French, and Arabic.
+          <p className="mt-4 md:mt-0 font-dm text-base leading-relaxed max-w-md" style={{ color: '#6B6055' }}>
+            Eight areas. Each engagement designed from scratch for the client. Delivered in English, French, and Arabic.
           </p>
         </div>
 

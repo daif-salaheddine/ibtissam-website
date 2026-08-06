@@ -76,7 +76,7 @@ export default function Hero() {
 
       {/* Content */}
       <div
-        className="relative z-10 text-center px-6 flex flex-col items-center"
+        className="relative z-10 w-full px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto flex flex-col items-start"
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s' }}
       >
         {/* Eyebrow */}
@@ -129,7 +129,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p
-          className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-lg text-center leading-relaxed"
+          className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-2xl leading-relaxed"
           style={{ color: '#A89B88' }}
         >
           {hero.tagline}
@@ -144,7 +144,7 @@ export default function Hero() {
         </p>
 
         {/* CTA */}
-        <div className="mt-12 flex items-center gap-6">
+        <div className="mt-12 flex items-center gap-6 self-start">
           <MagneticButton
             onClick={scrollDown}
             className="px-8 py-3 border font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-amber hover:text-bg"

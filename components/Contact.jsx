@@ -54,11 +54,10 @@ export default function Contact() {
         </span>
       </div>
 
-      <div className="relative z-10 px-6 md:px-12 max-w-[1400px] mx-auto w-full">
+      <div className="relative z-10 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto w-full">
         {/* Section number */}
         <div data-reveal className="flex items-center gap-4 mb-16">
           <span className="sec-num">08</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.08)' }} />
           <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
             Start a Conversation
           </span>

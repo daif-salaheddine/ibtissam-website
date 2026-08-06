@@ -27,12 +27,11 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-28 md:py-36 px-6 md:px-12 max-w-[1400px] mx-auto"
+      className="py-28 md:py-36 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto"
     >
       {/* Section label */}
       <div className="reveal-up flex items-center gap-4 mb-16">
         <span className="sec-num">01</span>
-        <div className="h-[1px] w-12" style={{ background: 'rgba(242,235,224,0.15)' }} />
         <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
           Professional Identity
         </span>
@@ -105,13 +104,13 @@ export default function About() {
         {/* Bio + pillars */}
         <div className="reveal-up delay-4">
           <p
-            className="font-dm text-base md:text-lg leading-[1.75] mb-8"
+            className="font-dm text-lg md:text-xl leading-[1.8] mb-8"
             style={{ color: '#A89B88' }}
           >
             {about.bioShort}
           </p>
           <p
-            className="font-dm text-sm md:text-base leading-[1.8]"
+            className="font-dm text-base md:text-lg leading-[1.85]"
             style={{ color: '#6B6055' }}
           >
             {about.bioLong.split('\n\n').map((para, i) => (

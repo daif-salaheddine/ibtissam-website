@@ -49,10 +49,9 @@ export default function Masterclasses() {
       style={{ background: '#080706', borderTop: '1px solid rgba(242,235,224,0.07)' }}
     >
       {/* Section header */}
-      <div className="pt-24 pb-12 px-6 md:px-12 max-w-[1400px] mx-auto">
+      <div className="pt-24 pb-12 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-4">
           <span className="sec-num">03</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.1)' }} />
         </div>
         <h2
           className="font-cormorant font-light leading-tight"
@@ -66,7 +65,7 @@ export default function Masterclasses() {
       </div>
 
       {/* Desktop: two-panel layout */}
-      <div className="hidden lg:grid lg:grid-cols-[35%_65%] h-[70vh] px-6 md:px-12 max-w-[1400px] mx-auto gap-16 pb-16">
+      <div className="hidden lg:grid lg:grid-cols-[35%_65%] h-[70vh] px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto gap-16 pb-16">
         {/* Left rail */}
         <div className="flex flex-col justify-center space-y-2 border-r" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
           {masterclasses.map((mc, i) => (

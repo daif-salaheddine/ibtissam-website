@@ -66,14 +66,13 @@ export default function Expertise() {
           className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4"
         >
           <span className="sec-num">02</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.1)' }} />
           <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: '#6B6055' }}>
             Three Pillars, Integrated by Design
           </span>
         </div>
 
         {/* Mobile: stack vertically */}
-        <div className="lg:hidden pt-32 pb-20 space-y-16 px-6 md:px-12 max-w-[1400px] mx-auto">
+        <div className="lg:hidden pt-32 pb-20 space-y-16 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
           {expertise.map((pillar, i) => (
             <PillarCard key={i} pillar={pillar} index={i} mobile />
           ))}

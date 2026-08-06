@@ -39,11 +39,10 @@ export default function Philosophy() {
       className="py-28 md:py-36"
       style={{ background: '#0A0806', borderTop: '1px solid rgba(242,235,224,0.05)' }}
     >
-      <div className="px-6 md:px-12 max-w-[1400px] mx-auto">
+      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">06</span>
-          <div className="h-[1px] w-8" style={{ background: 'rgba(242,235,224,0.08)' }} />
         </div>
         <h2
           data-reveal
@@ -91,10 +90,10 @@ export default function Philosophy() {
                 >
                   {step.step}
                 </h3>
-                <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#A89B88' }}>
+                <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#A89B88' }}>
                   {step.preview}
                 </p>
-                <p className="font-dm text-xs leading-relaxed" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-sm leading-relaxed" style={{ color: '#6B6055' }}>
                   {step.body}
                 </p>
                 {i < 3 && (
@@ -133,7 +132,7 @@ export default function Philosophy() {
                 >
                   {belief.title}
                 </h4>
-                <p className="font-dm text-sm leading-relaxed" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#6B6055' }}>
                   {belief.text}
                 </p>
               </div>
