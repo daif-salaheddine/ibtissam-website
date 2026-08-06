@@ -325,7 +325,71 @@ document.querySelectorAll('.expand-btn').forEach(btn => {
     nextBtn.style.pointerEvents = current === slides.length - 1 ? 'none' : '';
   }
 
+  function reanimateSlide(idx) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const slide = slides[idx];
+    if (!slide) return;
+    const els = [...slide.querySelectorAll('.reveal, .reveal-child')];
+    els.forEach(el => { el.style.transition = 'none'; el.classList.remove('visible'); });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        els.forEach(el => { el.style.transition = ''; el.classList.add('visible'); });
+      });
+    });
+  }
+
+  let slideInited = false;
   const _goTo = goTo;
-  goTo = function(idx) { _goTo(idx); updateArrows(); };
+  goTo = function(idx) {
+    _goTo(idx);
+    updateArrows();
+    if (slideInited) reanimateSlide(idx);
+    slideInited = true;
+  };
   goTo(0);
+})();
+
+/* ══════════════════════════════════════════════════
+   MOTION UPGRADE — v3
+══════════════════════════════════════════════════ */
+
+/* ─── 3D CARD TILT ──────────────────────────────── */
+(function () {
+  if (window.matchMedia('(hover: none)').matches) return;
+  const cards = document.querySelectorAll(
+    '.mc-card, .svc-card, .pillar, .proj-card, .theme-card, .pillar-card'
+  );
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform =
+        `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+/* ─── CTA RIPPLE ────────────────────────────────── */
+(function () {
+  document.querySelectorAll('.cta-primary').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const r      = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.left = (e.clientX - r.left - 4) + 'px';
+      ripple.style.top  = (e.clientY - r.top  - 4) + 'px';
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+})();
+
+/* ─── CLIENT CHIP STAGGER DELAY ────────────────── */
+(function () {
+  document.querySelectorAll('.clients-wall .cw-chip').forEach((chip, i) => {
+    chip.style.setProperty('--chip-delay', (i * 0.045) + 's');
+  });
 })();
