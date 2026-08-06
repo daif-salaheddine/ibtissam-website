@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import { projects, clients } from '@/lib/data'
+import { projects, clients, speaking } from '@/lib/data'
 import Ticker from '@/components/ui/Ticker'
 
 function useReveal(ref) {
@@ -66,12 +66,22 @@ export default function Projects() {
 
       {/* Client ticker */}
       <div className="py-10 border-t border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
-        <div className="mb-4 px-6 md:px-12">
+        <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
           <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#6B6055' }}>
-            Clients & Partners
+            Clients
           </span>
         </div>
         <Ticker items={clients} speed="normal" />
+      </div>
+
+      {/* Speaking & media ticker */}
+      <div className="py-8 border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
+        <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
+          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#6B6055' }}>
+            Speaking & Media
+          </span>
+        </div>
+        <Ticker items={speaking} speed="fast" />
       </div>
     </section>
   )

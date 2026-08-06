@@ -10,7 +10,7 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Expertise from '@/components/Expertise'
 import Masterclasses from '@/components/Masterclasses'
-import Services from '@/components/Services'
+import Testimonials from '@/components/Testimonials'
 import Timeline from '@/components/Timeline'
 import Philosophy from '@/components/Philosophy'
 import Projects from '@/components/Projects'
@@ -47,7 +47,7 @@ export default function Page() {
             <About />
             <Expertise />
             <Masterclasses />
-            <Services />
+            <Testimonials />
             <Timeline />
             <Philosophy />
             <Projects />

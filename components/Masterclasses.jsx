@@ -59,13 +59,13 @@ export default function Masterclasses() {
         >
           Signature <em>masterclasses</em>
         </h2>
-        <p className="mt-4 font-dm text-sm md:text-base max-w-2xl leading-relaxed" style={{ color: '#6B6055' }}>
-          Five ready-to-deploy programs blending all three pillars. Designed for CHROs, CEOs, university leadership, and international organization directors.
+        <p className="mt-4 font-dm text-base md:text-lg max-w-2xl leading-relaxed" style={{ color: '#6B6055' }}>
+          Two flagship programs. Available in English, French, and Arabic.
         </p>
       </div>
 
       {/* Desktop: two-panel layout */}
-      <div className="hidden lg:grid lg:grid-cols-[35%_65%] h-[70vh] px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto gap-16 pb-16">
+      <div className="hidden lg:grid lg:grid-cols-[2fr_3fr] h-[70vh] px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto gap-16 pb-16 overflow-hidden">
         {/* Left rail */}
         <div className="flex flex-col justify-center space-y-2 border-r" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
           {masterclasses.map((mc, i) => (

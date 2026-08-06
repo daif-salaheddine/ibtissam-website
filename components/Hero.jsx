@@ -88,7 +88,7 @@ export default function Hero() {
         </p>
 
         {/* Name — massive display */}
-        <div
+        <h1
           className="font-cormorant font-semibold leading-[0.88] select-none"
           style={{ fontSize: 'clamp(3.8rem, 13vw, 13rem)' }}
           aria-label={`${hero.firstName} ${hero.lastName}`}
@@ -103,7 +103,7 @@ export default function Hero() {
               <span key={i} className="inline-block" style={{ color: '#E8A020' }}>{ch}</span>
             ))}
           </div>
-        </div>
+        </h1>
 
         {/* Role carousel */}
         <div

@@ -1,13 +1,22 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Ibtissam Daif — Education & Workforce Development Consultant',
+  title: 'Ibtissam Daif — Education Consultant',
   description:
-    'Educator, learning designer, and workforce development consultant bridging Morocco and the United States. 10+ years building transformative programs across academia, corporate L&D, and civil society.',
+    'Higher education and workforce development consultant. 12 years building programs across Morocco, the US, and Europe — for universities, companies, and civil society.',
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>",
+  },
   openGraph: {
-    title: 'Ibtissam Daif',
-    description: 'Education & Workforce Development Consultant',
+    title: 'Ibtissam Daif — Education Consultant',
+    description: 'Higher education and workforce development consultant. 12 years building programs across Morocco, the US, and Europe.',
     type: 'website',
+    siteName: 'Ibtissam Daif',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ibtissam Daif — Education Consultant',
+    description: 'Higher education and workforce development consultant.',
   },
 }
 
