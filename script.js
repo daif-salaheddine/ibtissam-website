@@ -89,6 +89,14 @@ if (bar) {
   }, { passive: true });
 }
 
+/* ─── NAV SCROLL GLASS ──────────────────────────── */
+const topNavEl = document.getElementById('top-nav');
+if (topNavEl) {
+  window.addEventListener('scroll', () => {
+    topNavEl.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
+
 /* ─── SCROLL REVEAL ──────────────────────────────── */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
