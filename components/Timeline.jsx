@@ -70,7 +70,7 @@ export default function Timeline() {
         className="font-cormorant font-light leading-tight mb-4"
         style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
       >
-        What she has <em>built and changed</em>
+        What I've <em>built and changed</em>
       </h2>
       <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#6B6055' }}>
         Selected roles focused on outcomes and strategic contributions.
@@ -159,6 +159,22 @@ export default function Timeline() {
                 <p className="font-dm text-xs leading-relaxed mt-2" style={{ color: '#6B6055' }}>
                   {item.body}
                 </p>
+
+                {/* Photo if available */}
+                {item.photo && (
+                  <div
+                    className="mt-5 overflow-hidden"
+                    style={{ border: '1px solid rgba(242,235,224,0.07)' }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.photo}
+                      alt={`${item.org} — ${item.role}`}
+                      className="w-full object-cover"
+                      style={{ maxHeight: '260px', filter: 'grayscale(15%)' }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

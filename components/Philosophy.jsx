@@ -50,7 +50,7 @@ export default function Philosophy() {
           className="font-cormorant font-light leading-tight mb-16 max-w-xl"
           style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
         >
-          How she <em>thinks about learning</em>
+          How I <em>think about learning</em>
         </h2>
 
         {/* Pull quote */}

@@ -129,10 +129,18 @@ export default function Hero() {
 
         {/* Tagline */}
         <p
-          className="mt-4 font-mono text-[0.6rem] tracking-[0.25em] uppercase"
-          style={{ color: '#6B6055' }}
+          className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-lg text-center leading-relaxed"
+          style={{ color: '#A89B88' }}
         >
           {hero.tagline}
+        </p>
+
+        {/* Location */}
+        <p
+          className="mt-3 font-mono text-[0.6rem] tracking-[0.25em] uppercase"
+          style={{ color: '#6B6055' }}
+        >
+          {hero.location}
         </p>
 
         {/* CTA */}

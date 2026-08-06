@@ -87,10 +87,10 @@ export default function About() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/ibtissam.png"
-              alt="Ibtissam Daif"
+              src="/10.jfif"
+              alt="Ibtissam Daif at Fisher College graduation, Boston"
               className="w-full h-full object-cover"
-              style={{ filter: 'grayscale(20%)' }}
+              style={{ filter: 'grayscale(15%)' }}
             />
             {/* Amber overlay gradient */}
             <div
