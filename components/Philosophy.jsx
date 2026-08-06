@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useRef, useEffect } from 'react'
 import { philosophy } from '@/lib/data'
@@ -56,7 +56,7 @@ export default function Philosophy() {
         <blockquote
           data-reveal
           className="font-cormorant italic font-light leading-relaxed mb-20 max-w-3xl"
-          style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', color: '#A89B88' }}
+          style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', color: '#BDB0A5' }}
         >
           <span
             className="block w-6 h-[2px] mb-6"
@@ -68,7 +68,7 @@ export default function Philosophy() {
 
         {/* Methodology */}
         <div data-reveal className="mb-20">
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#6B6055' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9E908A' }}>
             The Four-Stage Methodology
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(242,235,224,0.05)' }}>
@@ -90,10 +90,10 @@ export default function Philosophy() {
                 >
                   {step.step}
                 </h3>
-                <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#A89B88' }}>
+                <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#BDB0A5' }}>
                   {step.preview}
                 </p>
-                <p className="font-dm text-sm leading-relaxed" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-sm leading-relaxed" style={{ color: '#9E908A' }}>
                   {step.body}
                 </p>
                 {i < 3 && (
@@ -112,7 +112,7 @@ export default function Philosophy() {
 
         {/* Beliefs */}
         <div>
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#6B6055' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9E908A' }}>
             Beliefs That Shape Every Engagement
           </div>
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
@@ -132,7 +132,7 @@ export default function Philosophy() {
                 >
                   {belief.title}
                 </h4>
-                <p className="font-dm text-base leading-relaxed" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#9E908A' }}>
                   {belief.text}
                 </p>
               </div>

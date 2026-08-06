@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 
@@ -75,7 +75,7 @@ export default function Navbar() {
               onClick={e => scrollTo(e, href)}
               className="font-mono text-[0.62rem] tracking-[0.22em] uppercase transition-colors duration-300"
               style={{
-                color: active === href ? '#E8A020' : '#A89B88',
+                color: active === href ? '#E8A020' : '#BDB0A5',
               }}
             >
               {label}

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
@@ -75,7 +75,7 @@ export default function Loader({ onComplete }) {
       {/* Bottom line */}
       <div
         className="absolute bottom-10 font-mono text-[0.6rem] tracking-[0.3em] uppercase"
-        style={{ color: '#6B6055' }}
+        style={{ color: '#9E908A' }}
       >
         Education & Workforce Development Consultant
       </div>

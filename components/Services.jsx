@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useRef, useEffect } from 'react'
 import { services } from '@/lib/data'
@@ -51,7 +51,7 @@ export default function Services() {
           >
             What I can do <em>for your organization</em>
           </h2>
-          <p className="mt-4 md:mt-0 font-dm text-base leading-relaxed max-w-md" style={{ color: '#6B6055' }}>
+          <p className="mt-4 md:mt-0 font-dm text-base leading-relaxed max-w-md" style={{ color: '#9E908A' }}>
             Eight areas. Each engagement designed from scratch for the client. Delivered in English, French, and Arabic.
           </p>
         </div>
@@ -82,7 +82,7 @@ function ServiceCard({ svc, index }) {
       onMouseLeave={e => e.currentTarget.style.background = '#111009'}
     >
       <div className="flex items-start justify-between mb-4">
-        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
+        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
           {svc.num}
         </span>
         <span className="font-mono text-[0.5rem] tracking-[0.15em] uppercase" style={{ color: '#E8A020' }}>
@@ -97,14 +97,14 @@ function ServiceCard({ svc, index }) {
         {svc.title}
       </h3>
 
-      <p className="font-dm text-sm leading-relaxed mb-4 flex-1" style={{ color: '#6B6055' }}>
+      <p className="font-dm text-sm leading-relaxed mb-4 flex-1" style={{ color: '#9E908A' }}>
         {svc.lead}
       </p>
 
       {open && (
         <ul className="mb-4 space-y-1.5">
           {svc.items.map(item => (
-            <li key={item} className="flex items-start gap-2 font-dm text-xs leading-relaxed" style={{ color: '#A89B88' }}>
+            <li key={item} className="flex items-start gap-2 font-dm text-xs leading-relaxed" style={{ color: '#BDB0A5' }}>
               <span style={{ color: '#E8A020', marginTop: 1, flexShrink: 0 }}>→</span>
               {item}
             </li>
@@ -115,7 +115,7 @@ function ServiceCard({ svc, index }) {
       <button
         onClick={() => setOpen(o => !o)}
         className="font-mono text-[0.55rem] tracking-[0.18em] uppercase mt-auto self-start transition-colors duration-300 hover:text-amber"
-        style={{ color: '#6B6055' }}
+        style={{ color: '#9E908A' }}
       >
         {open ? 'Less ↑' : 'Details ↓'}
       </button>

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import { about, stats } from '@/lib/data'
@@ -32,7 +32,7 @@ export default function About() {
       {/* Section label */}
       <div className="reveal-up flex items-center gap-4 mb-16">
         <span className="sec-num">01</span>
-        <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
+        <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
           Professional Identity
         </span>
       </div>
@@ -49,7 +49,7 @@ export default function About() {
             </div>
             <div
               className="mt-2 font-mono text-[0.58rem] tracking-[0.18em] uppercase"
-              style={{ color: '#6B6055' }}
+              style={{ color: '#9E908A' }}
             >
               {label}
             </div>
@@ -105,13 +105,13 @@ export default function About() {
         <div className="reveal-up delay-4">
           <p
             className="font-dm text-lg md:text-xl leading-[1.8] mb-8"
-            style={{ color: '#A89B88' }}
+            style={{ color: '#BDB0A5' }}
           >
             {about.bioShort}
           </p>
           <p
             className="font-dm text-base md:text-lg leading-[1.85]"
-            style={{ color: '#6B6055' }}
+            style={{ color: '#9E908A' }}
           >
             {about.bioLong.split('\n\n').map((para, i) => (
               <span key={i} className="block mb-4">{para}</span>

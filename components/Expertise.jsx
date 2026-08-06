@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import { expertise } from '@/lib/data'
@@ -66,7 +66,7 @@ export default function Expertise() {
           className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4"
         >
           <span className="sec-num">02</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: '#6B6055' }}>
+          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: '#9E908A' }}>
             Three Pillars, Integrated by Design
           </span>
         </div>
@@ -124,7 +124,7 @@ function PillarCard({ pillar, index, mobile = false }) {
                   key={tag}
                   className="font-mono text-[0.52rem] tracking-[0.18em] uppercase px-2.5 py-1 border"
                   style={{
-                    color: '#A06B10',
+                    color: '#C07820',
                     borderColor: 'rgba(232,160,32,0.2)',
                     background: 'rgba(232,160,32,0.04)',
                   }}
@@ -143,7 +143,7 @@ function PillarCard({ pillar, index, mobile = false }) {
             </h2>
             <div
               className="font-mono text-[0.6rem] tracking-[0.22em] uppercase mb-8"
-              style={{ color: '#6B6055' }}
+              style={{ color: '#9E908A' }}
             >
               {pillar.sub}
             </div>
@@ -159,7 +159,7 @@ function PillarCard({ pillar, index, mobile = false }) {
               <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-1.5" style={{ color: '#E8A020' }}>
                 Outcome
               </div>
-              <p className="font-dm text-sm leading-relaxed" style={{ color: '#A89B88' }}>
+              <p className="font-dm text-sm leading-relaxed" style={{ color: '#BDB0A5' }}>
                 {pillar.outcome.text}
               </p>
             </div>
@@ -168,7 +168,7 @@ function PillarCard({ pillar, index, mobile = false }) {
 
         {/* Right: list */}
         <div>
-          <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-6" style={{ color: '#6B6055' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-6" style={{ color: '#9E908A' }}>
             Core Capabilities
           </div>
           <ul className="space-y-3">
@@ -176,7 +176,7 @@ function PillarCard({ pillar, index, mobile = false }) {
               <li
                 key={i}
                 className="flex items-start gap-3 font-dm text-sm md:text-base leading-relaxed"
-                style={{ color: i < pillar.preview.length ? '#F2EBE0' : '#A89B88' }}
+                style={{ color: i < pillar.preview.length ? '#F2EBE0' : '#BDB0A5' }}
               >
                 <span style={{ color: '#E8A020', marginTop: 2, flexShrink: 0 }}>→</span>
                 {item}

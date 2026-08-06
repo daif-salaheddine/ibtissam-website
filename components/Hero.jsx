@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
@@ -82,7 +82,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <p
           className="font-mono text-[0.6rem] md:text-[0.7rem] tracking-[0.35em] uppercase mb-8"
-          style={{ color: '#6B6055' }}
+          style={{ color: '#9E908A' }}
         >
           {hero.eyebrow}
         </p>
@@ -119,7 +119,7 @@ export default function Hero() {
               <span
                 key={i}
                 className="font-cormorant italic font-light text-2xl md:text-3xl h-8 flex items-center justify-center"
-                style={{ color: '#A89B88' }}
+                style={{ color: '#BDB0A5' }}
               >
                 {role}
               </span>
@@ -130,7 +130,7 @@ export default function Hero() {
         {/* Tagline */}
         <p
           className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-2xl leading-relaxed"
-          style={{ color: '#A89B88' }}
+          style={{ color: '#BDB0A5' }}
         >
           {hero.tagline}
         </p>
@@ -138,7 +138,7 @@ export default function Hero() {
         {/* Location */}
         <p
           className="mt-3 font-mono text-[0.6rem] tracking-[0.25em] uppercase"
-          style={{ color: '#6B6055' }}
+          style={{ color: '#9E908A' }}
         >
           {hero.location}
         </p>
@@ -155,7 +155,7 @@ export default function Hero() {
           <a
             href="mailto:ibtissamdaif02@gmail.com"
             className="font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300 hover:text-amber"
-            style={{ color: '#6B6055' }}
+            style={{ color: '#9E908A' }}
           >
             Get in Touch →
           </a>
@@ -173,7 +173,7 @@ export default function Hero() {
           className="w-[1px] h-12 origin-top animate-blink"
           style={{ background: 'rgba(232,160,32,0.5)' }}
         />
-        <span className="font-mono text-[0.5rem] tracking-[0.3em] uppercase" style={{ color: '#6B6055' }}>
+        <span className="font-mono text-[0.5rem] tracking-[0.3em] uppercase" style={{ color: '#9E908A' }}>
           Scroll
         </span>
       </button>

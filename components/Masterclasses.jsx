@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import { masterclasses } from '@/lib/data'
@@ -51,7 +51,7 @@ export default function Masterclasses() {
         <p
           data-reveal
           className="font-dm text-base md:text-lg max-w-2xl leading-relaxed mb-16"
-          style={{ color: '#6B6055' }}
+          style={{ color: '#9E908A' }}
         >
           Two flagship programs. Available in English, French, and Arabic.
         </p>
@@ -90,13 +90,13 @@ export default function Masterclasses() {
               {/* Preview */}
               <p
                 className="font-dm text-base md:text-lg leading-relaxed mb-4 flex-1"
-                style={{ color: '#A89B88' }}
+                style={{ color: '#BDB0A5' }}
               >
                 {mc.preview}
               </p>
               <p
                 className="font-dm text-sm leading-relaxed mb-10"
-                style={{ color: '#6B6055' }}
+                style={{ color: '#9E908A' }}
               >
                 {mc.body}
               </p>
@@ -108,7 +108,7 @@ export default function Masterclasses() {
                     key={chip}
                     className="font-mono text-[0.52rem] tracking-[0.15em] uppercase px-3 py-1.5"
                     style={{
-                      color: '#A06B10',
+                      color: '#C07820',
                       background: 'rgba(232,160,32,0.07)',
                       border: '1px solid rgba(232,160,32,0.18)',
                     }}
@@ -122,7 +122,7 @@ export default function Masterclasses() {
               <div className="flex items-center gap-3">
                 <span
                   className="font-mono text-[0.52rem] tracking-[0.2em] uppercase"
-                  style={{ color: '#6B6055' }}
+                  style={{ color: '#9E908A' }}
                 >
                   Delivered in
                 </span>

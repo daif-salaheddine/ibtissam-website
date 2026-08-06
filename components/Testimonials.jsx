@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import { testimonials } from '@/lib/data'
@@ -74,7 +74,7 @@ export default function Testimonials() {
                 </div>
                 <div
                   className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mt-1"
-                  style={{ color: '#6B6055' }}
+                  style={{ color: '#9E908A' }}
                 >
                   {t.title}, {t.org}
                 </div>

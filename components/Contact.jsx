@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useRef, useEffect } from 'react'
 import { contact } from '@/lib/data'
@@ -58,7 +58,7 @@ export default function Contact() {
         {/* Section number */}
         <div data-reveal className="flex items-center gap-4 mb-16">
           <span className="sec-num">08</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
+          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
             Start a Conversation
           </span>
         </div>
@@ -67,7 +67,7 @@ export default function Contact() {
         <div
           data-reveal
           className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-6"
-          style={{ color: '#6B6055' }}
+          style={{ color: '#9E908A' }}
         >
           {contact.eyebrow}
         </div>
@@ -92,7 +92,7 @@ export default function Contact() {
         <p
           data-reveal
           className="font-mono text-[0.65rem] tracking-[0.2em] uppercase mb-8"
-          style={{ color: '#6B6055' }}
+          style={{ color: '#9E908A' }}
         >
           {contact.creds}
         </p>
@@ -101,7 +101,7 @@ export default function Contact() {
         <blockquote
           data-reveal
           className="font-cormorant italic font-light leading-relaxed mb-12 max-w-2xl"
-          style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#A89B88' }}
+          style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#BDB0A5' }}
         >
           {contact.quote}
         </blockquote>
@@ -125,7 +125,7 @@ export default function Contact() {
           style={{ borderColor: 'rgba(242,235,224,0.07)' }}
         >
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#6B6055' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
               Phone
             </div>
             <a
@@ -137,7 +137,7 @@ export default function Contact() {
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#6B6055' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
               Email
             </div>
             <a
@@ -149,7 +149,7 @@ export default function Contact() {
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#6B6055' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
               LinkedIn
             </div>
             <a
@@ -163,7 +163,7 @@ export default function Contact() {
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#6B6055' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
               Based Between
             </div>
             <span className="font-dm text-sm" style={{ color: '#F2EBE0' }}>

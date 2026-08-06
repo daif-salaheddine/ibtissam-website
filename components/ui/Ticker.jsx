@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 export default function Ticker({ items, speed = 'normal', className = '' }) {
   // Duplicate for seamless loop
@@ -17,7 +17,7 @@ export default function Ticker({ items, speed = 'normal', className = '' }) {
             <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase" style={{ color: '#E8A020' }}>
               {item.category}
             </span>
-            <span style={{ color: '#6B6055', marginLeft: 24 }}>·</span>
+            <span style={{ color: '#9E908A', marginLeft: 24 }}>·</span>
           </span>
         ))}
       </div>

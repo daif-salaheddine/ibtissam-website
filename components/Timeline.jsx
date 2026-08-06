@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import { timeline } from '@/lib/data'
@@ -71,7 +71,7 @@ export default function Timeline() {
       >
         What I've <em>built and changed</em>
       </h2>
-      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#6B6055' }}>
+      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9E908A' }}>
         Selected roles focused on outcomes and strategic contributions.
       </p>
 
@@ -116,7 +116,7 @@ export default function Timeline() {
                 {/* Date / Org */}
                 <div
                   className="font-mono text-[0.58rem] tracking-[0.2em] uppercase mb-1"
-                  style={{ color: '#6B6055' }}
+                  style={{ color: '#9E908A' }}
                 >
                   {item.date}
                 </div>
@@ -126,7 +126,7 @@ export default function Timeline() {
                 >
                   {item.org}
                 </div>
-                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#6B6055' }}>
+                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9E908A' }}>
                   {item.place}
                 </div>
 
@@ -152,10 +152,10 @@ export default function Timeline() {
                   </span>
                 )}
 
-                <p className="font-dm text-base leading-relaxed" style={{ color: '#A89B88' }}>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#BDB0A5' }}>
                   {item.preview}
                 </p>
-                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#6B6055' }}>
+                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9E908A' }}>
                   {item.body}
                 </p>
 

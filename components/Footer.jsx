@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -12,10 +12,10 @@ export default function Footer() {
       }}
     >
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#6B6055' }}>
+        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
           © {year} Ibtissam Daif · All rights reserved
         </span>
-        <span className="font-mono text-[0.55rem] tracking-[0.15em] uppercase" style={{ color: '#6B6055' }}>
+        <span className="font-mono text-[0.55rem] tracking-[0.15em] uppercase" style={{ color: '#9E908A' }}>
           Education & Workforce Development Consultant
         </span>
       </div>

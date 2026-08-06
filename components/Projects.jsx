@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useRef, useEffect, useState } from 'react'
 import { projects, clients, speaking } from '@/lib/data'
@@ -52,7 +52,7 @@ export default function Projects() {
         >
           Credibility built <em>through practice</em>
         </h2>
-        <p data-reveal className="font-dm text-sm leading-relaxed mb-14 max-w-xl" style={{ color: '#6B6055' }}>
+        <p data-reveal className="font-dm text-sm leading-relaxed mb-14 max-w-xl" style={{ color: '#9E908A' }}>
           Selected engagements illustrating scope, depth, and the organizational trust that takes years to earn.
         </p>
 
@@ -67,7 +67,7 @@ export default function Projects() {
       {/* Client ticker */}
       <div className="py-10 border-t border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#6B6055' }}>
+          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9E908A' }}>
             Clients
           </span>
         </div>
@@ -77,7 +77,7 @@ export default function Projects() {
       {/* Speaking & media ticker */}
       <div className="py-8 border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#6B6055' }}>
+          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9E908A' }}>
             Speaking & Media
           </span>
         </div>
@@ -117,7 +117,7 @@ function ProjectCard({ project, index }) {
       {/* Client label */}
       <div
         className="font-mono text-[0.52rem] tracking-[0.2em] uppercase mb-3 transition-colors duration-300"
-        style={{ color: hover ? '#E8A020' : '#6B6055' }}
+        style={{ color: hover ? '#E8A020' : '#9E908A' }}
       >
         {project.client}
       </div>
@@ -134,10 +134,10 @@ function ProjectCard({ project, index }) {
       </h3>
 
       {/* Preview */}
-      <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#A89B88' }}>
+      <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#BDB0A5' }}>
         {project.preview}
       </p>
-      <p className="font-dm text-xs leading-relaxed" style={{ color: '#6B6055' }}>
+      <p className="font-dm text-xs leading-relaxed" style={{ color: '#9E908A' }}>
         {project.body}
       </p>
 
