@@ -73,20 +73,21 @@ export default function Hero() {
           {/* Left: name + role carousel */}
           <div>
             <h1
-              className="font-cormorant font-semibold leading-[0.88] select-none"
+              className="font-cormorant font-semibold leading-[0.95] select-none overflow-hidden"
               style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
               aria-label={`${hero.firstName} ${hero.lastName}`}
             >
-              <div ref={firstRef} className="overflow-hidden">
+              <span ref={firstRef} className="inline">
                 {NAME_FIRST.split('').map((ch, i) => (
                   <span key={i} className="inline-block" style={{ color: '#FFFFFF' }}>{ch}</span>
                 ))}
-              </div>
-              <div ref={lastRef} className="overflow-hidden">
+              </span>
+              <span className="inline-block" style={{ color: '#FFFFFF' }}>&nbsp;</span>
+              <span ref={lastRef} className="inline">
                 {NAME_LAST.split('').map((ch, i) => (
                   <span key={i} className="inline-block" style={{ color: '#C4973A' }}>{ch}</span>
                 ))}
-              </div>
+              </span>
             </h1>
 
             <div className="mt-8 h-8 overflow-hidden relative" aria-live="polite" aria-atomic="true">
