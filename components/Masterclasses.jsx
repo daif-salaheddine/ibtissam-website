@@ -34,106 +34,58 @@ export default function Masterclasses() {
       id="masterclasses"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: 'transparent' }}
+      style={{ background: '#FFFFFF' }}
     >
-      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
-        {/* Header */}
+      <div className="px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">03</span>
         </div>
-        <h2
-          data-reveal
-          className="font-cormorant font-light leading-tight mb-4"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
-        >
+        <h2 data-reveal className="font-cormorant font-light leading-tight mb-4" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
           Signature <em>masterclasses</em>
         </h2>
-        <p
-          data-reveal
-          className="font-dm text-base md:text-lg max-w-2xl leading-relaxed mb-16"
-          style={{ color: '#9B968F' }}
-        >
+        <p data-reveal className="font-dm text-base md:text-lg max-w-2xl leading-relaxed mb-16" style={{ color: '#9A8E84' }}>
           Two flagship programs. Available in English, French, and Arabic.
         </p>
 
-        {/* Two-column grid */}
-        <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(34,31,28,0.06)' }}>
+        <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(42,34,24,0.06)' }}>
           {masterclasses.map((mc, i) => (
-            <div
-              key={i}
-              data-reveal
-              className="p-10 md:p-14 flex flex-col"
-              style={{ background: '#FFFFFF' }}
-            >
-              {/* Tag */}
-              <div
-                className="font-mono text-[0.55rem] tracking-[0.22em] uppercase mb-6"
-                style={{ color: '#8A5C0A' }}
-              >
+            <div key={i} data-reveal className="p-10 md:p-14 flex flex-col" style={{ background: '#FFFFFF' }}>
+              <div className="font-mono text-[0.55rem] tracking-[0.22em] uppercase mb-6" style={{ color: '#5C7A68' }}>
                 {mc.num} — {mc.tag}
               </div>
 
-              {/* Title */}
-              <h3
-                className="font-cormorant font-semibold leading-tight mb-6"
-                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', color: '#221F1C' }}
-              >
+              <h3 className="font-cormorant font-semibold leading-tight mb-6" style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', color: '#2A2218' }}>
                 {mc.title}
               </h3>
 
-              {/* Divider */}
-              <div
-                className="w-8 h-[1px] mb-8"
-                style={{ background: 'rgba(217,146,14,0.4)' }}
-              />
+              <div className="w-8 h-[1px] mb-8" style={{ background: 'rgba(196,151,58,0.4)' }} />
 
-              {/* Preview */}
-              <p
-                className="font-dm text-base md:text-lg leading-relaxed mb-4 flex-1"
-                style={{ color: '#6B6560' }}
-              >
+              <p className="font-dm text-base md:text-lg leading-relaxed mb-4 flex-1" style={{ color: '#5A5048' }}>
                 {mc.preview}
               </p>
-              <p
-                className="font-dm text-sm leading-relaxed mb-10"
-                style={{ color: '#9B968F' }}
-              >
+              <p className="font-dm text-sm leading-relaxed mb-10" style={{ color: '#9A8E84' }}>
                 {mc.body}
               </p>
 
-              {/* Chips */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {mc.chips.map(chip => (
                   <span
                     key={chip}
                     className="font-mono text-[0.52rem] tracking-[0.15em] uppercase px-3 py-1.5"
-                    style={{
-                      color: '#8A5C0A',
-                      background: 'rgba(217,146,14,0.08)',
-                      border: '1px solid rgba(138,92,10,0.2)',
-                    }}
+                    style={{ color: '#5C7A68', background: 'rgba(90,112,96,0.07)', border: '1px solid rgba(90,112,96,0.22)' }}
                   >
                     {chip}
                   </span>
                 ))}
               </div>
 
-              {/* Languages */}
               <div className="flex items-center gap-3">
-                <span
-                  className="font-mono text-[0.52rem] tracking-[0.2em] uppercase"
-                  style={{ color: '#9B968F' }}
-                >
-                  Delivered in
-                </span>
+                <span className="font-mono text-[0.52rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>Delivered in</span>
                 {mc.langs.map(lang => (
                   <span
                     key={lang}
                     className="font-mono text-[0.58rem] tracking-[0.12em] px-2 py-1"
-                    style={{
-                      color: '#221F1C',
-                      border: '1px solid rgba(34,31,28,0.12)',
-                    }}
+                    style={{ color: '#2A2218', border: '1px solid rgba(42,34,24,0.15)' }}
                   >
                     {lang}
                   </span>

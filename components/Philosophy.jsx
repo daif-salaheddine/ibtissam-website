@@ -37,73 +37,40 @@ export default function Philosophy() {
       id="philosophy"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: 'transparent' }}
+      style={{ background: '#FFFFFF' }}
     >
-      <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
-        {/* Header */}
+      <div className="px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">06</span>
         </div>
-        <h2
-          data-reveal
-          className="font-cormorant font-light leading-tight mb-16 max-w-xl"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
-        >
+        <h2 data-reveal className="font-cormorant font-light leading-tight mb-16 max-w-xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
           How I <em>think about learning</em>
         </h2>
 
         {/* Pull quote */}
-        <blockquote
-          data-reveal
-          className="font-cormorant italic font-light leading-relaxed mb-20 max-w-3xl"
-          style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', color: '#6B6560' }}
-        >
-          <span
-            className="block w-6 h-[2px] mb-6"
-            style={{ background: '#D9920E' }}
-            aria-hidden
-          />
+        <blockquote data-reveal className="font-cormorant italic font-light leading-relaxed mb-20 max-w-3xl" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', color: '#5A5048' }}>
+          <span className="block w-6 h-[2px] mb-6" style={{ background: '#C4973A' }} aria-hidden />
           {philosophy.quote}
         </blockquote>
 
         {/* Methodology */}
         <div data-reveal className="mb-20">
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9B968F' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
             The Four-Stage Methodology
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(34,31,28,0.05)' }}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(42,34,24,0.06)' }}>
             {philosophy.methodology.map((step, i) => (
-              <div
-                key={i}
-                className="p-6"
-                style={{ background: '#F8F5EE' }}
-              >
-                <div
-                  className="font-mono text-3xl md:text-4xl font-light mb-4 tabular-nums"
-                  style={{ color: 'rgba(217,146,14,0.28)' }}
-                >
+              <div key={i} className="p-6" style={{ background: '#F5EDE0' }}>
+                <div className="font-mono text-3xl md:text-4xl font-light mb-4 tabular-nums" style={{ color: 'rgba(196,151,58,0.3)' }}>
                   {step.num}
                 </div>
-                <h3
-                  className="font-cormorant font-semibold text-xl md:text-2xl mb-3"
-                  style={{ color: '#221F1C' }}
-                >
+                <h3 className="font-cormorant font-semibold text-xl md:text-2xl mb-3" style={{ color: '#2A2218' }}>
                   {step.step}
                 </h3>
-                <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#6B6560' }}>
-                  {step.preview}
-                </p>
-                <p className="font-dm text-sm leading-relaxed" style={{ color: '#9B968F' }}>
-                  {step.body}
-                </p>
+                <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#5A5048' }}>{step.preview}</p>
+                <p className="font-dm text-sm leading-relaxed" style={{ color: '#9A8E84' }}>{step.body}</p>
                 {i < 3 && (
-                  <div
-                    className="hidden lg:flex justify-end items-center mt-4"
-                    style={{ color: 'rgba(217,146,14,0.35)' }}
-                    aria-hidden
-                  >
-                    →
-                  </div>
+                  <div className="hidden lg:flex justify-end items-center mt-4" style={{ color: 'rgba(196,151,58,0.35)' }} aria-hidden>→</div>
                 )}
               </div>
             ))}
@@ -112,7 +79,7 @@ export default function Philosophy() {
 
         {/* Beliefs */}
         <div>
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9B968F' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
             Beliefs That Shape Every Engagement
           </div>
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
@@ -121,20 +88,10 @@ export default function Philosophy() {
                 key={i}
                 data-reveal
                 className="p-6 border-t-2"
-                style={{
-                  borderColor: 'rgba(217,146,14,0.3)',
-                  background: 'rgba(217,146,14,0.04)',
-                }}
+                style={{ borderColor: 'rgba(196,151,58,0.35)', background: 'rgba(196,151,58,0.04)' }}
               >
-                <h4
-                  className="font-cormorant font-semibold text-xl mb-3"
-                  style={{ color: '#221F1C' }}
-                >
-                  {belief.title}
-                </h4>
-                <p className="font-dm text-base leading-relaxed" style={{ color: '#6B6560' }}>
-                  {belief.text}
-                </p>
+                <h4 className="font-cormorant font-semibold text-xl mb-3" style={{ color: '#2A2218' }}>{belief.title}</h4>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#5A5048' }}>{belief.text}</p>
               </div>
             ))}
           </div>

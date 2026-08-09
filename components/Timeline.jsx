@@ -45,50 +45,36 @@ export default function Timeline() {
       lineObs = () => window.removeEventListener('scroll', update)
     }
 
-    return () => {
-      obs.disconnect()
-      lineObs?.()
-    }
+    return () => { obs.disconnect(); lineObs?.() }
   }, [])
 
   return (
     <section
       id="timeline"
       ref={sectionRef}
-      className="py-28 md:py-36 px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto"
+      style={{ background: '#F5EDE0' }}
     >
-      {/* Header */}
+      <div className="py-28 md:py-36 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
       <div className="flex items-center gap-4 mb-6">
         <span className="sec-num">05</span>
       </div>
-      <h2
-        className="font-cormorant font-light leading-tight mb-4"
-        style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
-      >
+      <h2 className="font-cormorant font-light leading-tight mb-4" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
         What I&apos;ve <em>built and changed</em>
       </h2>
-      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9B968F' }}>
+      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9A8E84' }}>
         Selected roles focused on outcomes and strategic contributions.
       </p>
 
-      {/* Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div
-          className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] origin-top"
-          style={{ background: 'rgba(34,31,28,0.08)' }}
-        >
+        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] origin-top" style={{ background: 'rgba(42,34,24,0.1)' }}>
           <div
             ref={lineRef}
             className="absolute inset-0 origin-top will-change-transform"
-            style={{
-              background: 'linear-gradient(to bottom, #D9920E, rgba(217,146,14,0.1))',
-              transform: 'scaleY(0)',
-            }}
+            style={{ background: 'linear-gradient(to bottom, #C4973A, rgba(196,151,58,0.1))', transform: 'scaleY(0)' }}
           />
         </div>
 
-        {/* Entries */}
         <div className="space-y-0">
           {timeline.map((item, i) => (
             <div
@@ -98,76 +84,37 @@ export default function Timeline() {
                 i % 2 === 0 ? 'md:pr-[calc(50%+2rem)]' : 'md:pl-[calc(50%+2rem)]'
               }`}
             >
-              {/* Dot on line */}
+              {/* Dot */}
               <div
                 className="absolute left-0 md:left-1/2 top-1 w-3 h-3 rounded-full border-2 -translate-x-1/2"
-                style={{
-                  borderColor: '#D9920E',
-                  background: item.metric ? '#D9920E' : '#FFFFFF',
-                }}
+                style={{ borderColor: '#C4973A', background: item.metric ? '#C4973A' : '#F5EDE0' }}
               />
 
-              {/* Content */}
               <div className={i % 2 === 0 ? 'md:text-right' : 'md:col-start-2'}>
-                {/* Date / Org */}
-                <div
-                  className="font-mono text-[0.58rem] tracking-[0.2em] uppercase mb-1"
-                  style={{ color: '#9B968F' }}
-                >
-                  {item.date}
-                </div>
-                <div
-                  className="font-cormorant font-semibold text-lg md:text-2xl mb-0.5"
-                  style={{ color: '#D9920E' }}
-                >
-                  {item.org}
-                </div>
-                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9B968F' }}>
-                  {item.place}
-                </div>
+                <div className="font-mono text-[0.58rem] tracking-[0.2em] uppercase mb-1" style={{ color: '#9A8E84' }}>{item.date}</div>
+                <div className="font-cormorant font-semibold text-lg md:text-2xl mb-0.5" style={{ color: '#C4973A' }}>{item.org}</div>
+                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9A8E84' }}>{item.place}</div>
 
-                {/* Role */}
-                <h3
-                  className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug"
-                  style={{ color: '#221F1C' }}
-                >
+                <h3 className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug" style={{ color: '#2A2218' }}>
                   {item.role}
                 </h3>
 
-                {/* Metric badge */}
                 {item.metric && (
                   <span
                     className="inline-block font-mono text-[0.55rem] tracking-[0.15em] uppercase px-3 py-1.5 mb-3"
-                    style={{
-                      color: '#3D8030',
-                      background: 'rgba(61,128,48,0.10)',
-                      border: '1px solid rgba(61,128,48,0.25)',
-                    }}
+                    style={{ color: '#3D6840', background: 'rgba(61,104,64,0.10)', border: '1px solid rgba(61,104,64,0.25)' }}
                   >
                     ↑ {item.metric}
                   </span>
                 )}
 
-                <p className="font-dm text-base leading-relaxed" style={{ color: '#6B6560' }}>
-                  {item.preview}
-                </p>
-                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9B968F' }}>
-                  {item.body}
-                </p>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#5A5048' }}>{item.preview}</p>
+                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9A8E84' }}>{item.body}</p>
 
-                {/* Photo if available */}
                 {item.photo && (
-                  <div
-                    className="mt-5 overflow-hidden"
-                    style={{ border: '1px solid rgba(34,31,28,0.08)' }}
-                  >
+                  <div className="mt-5 overflow-hidden" style={{ border: '1px solid rgba(42,34,24,0.08)' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.photo}
-                      alt={`${item.org} — ${item.role}`}
-                      className="w-full object-cover"
-                      style={{ maxHeight: '260px', filter: 'grayscale(10%)' }}
-                    />
+                    <img src={item.photo} alt={`${item.org} — ${item.role}`} className="w-full object-cover" style={{ maxHeight: '260px', filter: 'grayscale(10%)' }} />
                   </div>
                 )}
               </div>
@@ -175,6 +122,7 @@ export default function Timeline() {
           ))}
         </div>
       </div>
+    </div>
     </section>
   )
 }

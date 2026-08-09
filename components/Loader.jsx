@@ -11,7 +11,6 @@ export default function Loader({ onComplete }) {
 
   useEffect(() => {
     const start = performance.now()
-
     const tick = (now) => {
       const elapsed = now - start
       const progress = Math.min(elapsed / TOTAL_DURATION, 1)
@@ -20,7 +19,6 @@ export default function Loader({ onComplete }) {
         : -1 + (4 - 2 * progress) * progress
       const current = Math.floor(eased * 100)
       setCount(current)
-
       if (progress < 1) {
         requestAnimationFrame(tick)
       } else {
@@ -28,7 +26,6 @@ export default function Loader({ onComplete }) {
         setTimeout(onComplete, 180)
       }
     }
-
     const raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [onComplete])
@@ -39,20 +36,18 @@ export default function Loader({ onComplete }) {
       initial={{ opacity: 1 }}
       exit={{ y: '-100%', transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } }}
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none"
-      style={{ background: '#F3F1EC' }}
+      style={{ background: '#F5EDE0' }}
     >
-      {/* Counter */}
       <div
         className="font-mono text-[12vw] md:text-[8vw] leading-none tabular-nums"
-        style={{ color: '#221F1C' }}
+        style={{ color: '#2A2218' }}
       >
         {String(count).padStart(2, '0')}
       </div>
 
-      {/* Name reveal */}
       <div
         className="mt-6 font-cormorant tracking-[0.18em] text-[5vw] md:text-[3vw] uppercase"
-        style={{ color: '#221F1C' }}
+        style={{ color: '#2A2218' }}
         aria-label={NAME}
       >
         {NAME.split('').map((char, i) => {
@@ -61,29 +56,24 @@ export default function Loader({ onComplete }) {
             <span
               key={i}
               className="inline-block transition-opacity duration-500"
-              style={{
-                opacity: count >= threshold ? 1 : 0,
-                transitionDelay: `${i * 20}ms`,
-              }}
+              style={{ opacity: count >= threshold ? 1 : 0, transitionDelay: `${i * 20}ms` }}
             >
-              {char === ' ' ? ' ' : char}
+              {char === ' ' ? ' ' : char}
             </span>
           )
         })}
       </div>
 
-      {/* Bottom label */}
       <div
         className="absolute bottom-10 font-mono text-[0.6rem] tracking-[0.3em] uppercase"
-        style={{ color: '#6B6560' }}
+        style={{ color: '#9A8E84' }}
       >
         Education &amp; Workforce Development Consultant
       </div>
 
-      {/* Amber progress line */}
       <motion.div
         className="absolute bottom-0 left-0 h-[2px]"
-        style={{ background: '#D9920E' }}
+        style={{ background: '#C4973A' }}
         initial={{ width: '0%' }}
         animate={{ width: `${count}%` }}
         transition={{ duration: 0.05 }}
