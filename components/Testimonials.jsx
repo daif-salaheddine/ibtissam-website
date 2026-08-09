@@ -85,13 +85,13 @@ export default function Testimonials() {
                 className="font-cormorant italic font-normal leading-[1.55] mb-8"
                 style={{
                   fontSize: 'clamp(1.1rem, 1.4vw, 1.35rem)',
-                  color: t.placeholder ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.95)',
+                  color: 'rgba(255,255,255,0.95)',
                 }}
               >
                 {t.quote}
               </blockquote>
               <div>
-                <div className="font-dm text-sm font-medium" style={{ color: t.placeholder ? 'rgba(255,255,255,0.3)' : '#FFFFFF' }}>
+                <div className="font-dm text-sm font-medium" style={{ color: '#FFFFFF' }}>
                   {t.name}
                 </div>
                 <div className="font-mono text-[0.75rem] tracking-[0.1em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
@@ -102,11 +102,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {testimonials.some(t => t.placeholder) && (
-          <p className="mt-12 font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
-            ↑ Placeholder — replace with real testimonials before sharing the link
-          </p>
-        )}
       </div>
     </section>
   )
