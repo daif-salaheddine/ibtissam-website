@@ -1,10 +1,10 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const NAME = 'IBTISSAM DAIF'
-const TOTAL_DURATION = 2400 // ms
+const TOTAL_DURATION = 2400
 
 export default function Loader({ onComplete }) {
   const [count, setCount] = useState(0)
@@ -15,7 +15,6 @@ export default function Loader({ onComplete }) {
     const tick = (now) => {
       const elapsed = now - start
       const progress = Math.min(elapsed / TOTAL_DURATION, 1)
-      // Ease-in-out progress so it starts fast and slows near 100
       const eased = progress < 0.5
         ? 2 * progress * progress
         : -1 + (4 - 2 * progress) * progress
@@ -39,12 +38,13 @@ export default function Loader({ onComplete }) {
       key="loader"
       initial={{ opacity: 1 }}
       exit={{ y: '-100%', transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } }}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-bg select-none"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none"
+      style={{ background: '#F3F1EC' }}
     >
       {/* Counter */}
       <div
         className="font-mono text-[12vw] md:text-[8vw] leading-none tabular-nums"
-        style={{ color: '#E8A020' }}
+        style={{ color: '#221F1C' }}
       >
         {String(count).padStart(2, '0')}
       </div>
@@ -52,7 +52,7 @@ export default function Loader({ onComplete }) {
       {/* Name reveal */}
       <div
         className="mt-6 font-cormorant tracking-[0.18em] text-[5vw] md:text-[3vw] uppercase"
-        style={{ color: '#F2EBE0' }}
+        style={{ color: '#221F1C' }}
         aria-label={NAME}
       >
         {NAME.split('').map((char, i) => {
@@ -72,18 +72,18 @@ export default function Loader({ onComplete }) {
         })}
       </div>
 
-      {/* Bottom line */}
+      {/* Bottom label */}
       <div
         className="absolute bottom-10 font-mono text-[0.6rem] tracking-[0.3em] uppercase"
-        style={{ color: '#9E908A' }}
+        style={{ color: '#6B6560' }}
       >
-        Education & Workforce Development Consultant
+        Education &amp; Workforce Development Consultant
       </div>
 
-      {/* Amber line */}
+      {/* Amber progress line */}
       <motion.div
         className="absolute bottom-0 left-0 h-[2px]"
-        style={{ background: '#E8A020' }}
+        style={{ background: '#D9920E' }}
         initial={{ width: '0%' }}
         animate={{ width: `${count}%` }}
         transition={{ duration: 0.05 }}

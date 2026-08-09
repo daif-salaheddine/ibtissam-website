@@ -8,20 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg:      '#080706',
-        surface: '#111009',
-        card:    '#1A1714',
-        amber:   '#E8A020',
-        'amber-dim':  '#C07820',
-        sage:    '#5C9B52',
-        cream:   '#F2EBE0',
-        'cream-2': '#BDB0A5',
-        'cream-3': '#9E908A',
+        bg:          '#F3F1EC',
+        surface:     '#FFFFFF',
+        card:        '#F8F5EE',
+        amber:       '#D9920E',
+        'amber-dim': '#8A5C0A',
+        sage:        '#3D8030',
+        cream:       '#221F1C',
+        'cream-2':   '#6B6560',
+        'cream-3':   '#9B968F',
       },
       fontFamily: {
         cormorant: ['"Cormorant Garamond"', 'serif'],
         dm:        ['"DM Sans"', 'sans-serif'],
         mono:      ['"JetBrains Mono"', 'monospace'],
+      },
+      boxShadow: {
+        card:     '0 1px 3px rgba(34,31,28,0.04), 0 8px 32px rgba(34,31,28,0.07)',
+        'card-sm': '0 1px 2px rgba(34,31,28,0.03), 0 4px 16px rgba(34,31,28,0.05)',
       },
       keyframes: {
         ticker: {
@@ -34,9 +38,9 @@ module.exports = {
         },
       },
       animation: {
-        ticker:       'ticker 40s linear infinite',
+        ticker:        'ticker 40s linear infinite',
         'ticker-fast': 'ticker 24s linear infinite',
-        blink:        'blink 2s ease-in-out infinite',
+        blink:         'blink 2s ease-in-out infinite',
       },
     },
   },

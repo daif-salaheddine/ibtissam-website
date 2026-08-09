@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef, useEffect, useState } from 'react'
 import { projects, clients, speaking } from '@/lib/data'
@@ -38,7 +38,7 @@ export default function Projects() {
       id="projects"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: '#080706', borderTop: '1px solid rgba(242,235,224,0.07)' }}
+      style={{ background: 'transparent' }}
     >
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto mb-16">
         {/* Header */}
@@ -48,16 +48,16 @@ export default function Projects() {
         <h2
           data-reveal
           className="font-cormorant font-light leading-tight mb-4"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
+          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
         >
           Credibility built <em>through practice</em>
         </h2>
-        <p data-reveal className="font-dm text-sm leading-relaxed mb-14 max-w-xl" style={{ color: '#9E908A' }}>
+        <p data-reveal className="font-dm text-sm leading-relaxed mb-14 max-w-xl" style={{ color: '#9B968F' }}>
           Selected engagements illustrating scope, depth, and the organizational trust that takes years to earn.
         </p>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'rgba(242,235,224,0.07)' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'rgba(34,31,28,0.06)' }}>
           {projects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} />
           ))}
@@ -65,9 +65,9 @@ export default function Projects() {
       </div>
 
       {/* Client ticker */}
-      <div className="py-10 border-t border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
+      <div className="py-10 border-t border-b" style={{ borderColor: 'rgba(34,31,28,0.07)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9E908A' }}>
+          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9B968F' }}>
             Clients
           </span>
         </div>
@@ -75,10 +75,10 @@ export default function Projects() {
       </div>
 
       {/* Speaking & media ticker */}
-      <div className="py-8 border-b" style={{ borderColor: 'rgba(242,235,224,0.07)' }}>
+      <div className="py-8 border-b" style={{ borderColor: 'rgba(34,31,28,0.07)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-24 xl:px-32">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9E908A' }}>
-            Speaking & Media
+          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9B968F' }}>
+            Speaking &amp; Media
           </span>
         </div>
         <Ticker items={speaking} speed="fast" />
@@ -95,7 +95,7 @@ function ProjectCard({ project, index }) {
       data-reveal
       className="p-6 md:p-8 flex flex-col transition-all duration-500 relative overflow-hidden"
       style={{
-        background: hover ? '#1A1714' : '#080706',
+        background: hover ? '#F8F5EE' : '#FFFFFF',
         minHeight: index < 2 ? 280 : 220,
         cursor: 'default',
       }}
@@ -107,7 +107,7 @@ function ProjectCard({ project, index }) {
         className="absolute top-4 right-4 font-cormorant font-light tabular-nums leading-none pointer-events-none"
         style={{
           fontSize: '4rem',
-          color: 'rgba(232,160,32,0.05)',
+          color: 'rgba(217,146,14,0.06)',
         }}
         aria-hidden
       >
@@ -117,7 +117,7 @@ function ProjectCard({ project, index }) {
       {/* Client label */}
       <div
         className="font-mono text-[0.52rem] tracking-[0.2em] uppercase mb-3 transition-colors duration-300"
-        style={{ color: hover ? '#E8A020' : '#9E908A' }}
+        style={{ color: hover ? '#D9920E' : '#9B968F' }}
       >
         {project.client}
       </div>
@@ -127,17 +127,17 @@ function ProjectCard({ project, index }) {
         className="font-cormorant font-semibold leading-snug mb-3 flex-1"
         style={{
           fontSize: 'clamp(1.2rem, 2vw, 1.6rem)',
-          color: '#F2EBE0',
+          color: '#221F1C',
         }}
       >
         {project.title}
       </h3>
 
       {/* Preview */}
-      <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#BDB0A5' }}>
+      <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#6B6560' }}>
         {project.preview}
       </p>
-      <p className="font-dm text-xs leading-relaxed" style={{ color: '#9E908A' }}>
+      <p className="font-dm text-xs leading-relaxed" style={{ color: '#9B968F' }}>
         {project.body}
       </p>
 
@@ -145,7 +145,7 @@ function ProjectCard({ project, index }) {
       <div
         className="absolute bottom-0 left-0 h-[2px] transition-all duration-500"
         style={{
-          background: '#E8A020',
+          background: '#D9920E',
           width: hover ? '100%' : '0%',
         }}
       />

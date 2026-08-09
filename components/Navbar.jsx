@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
 
@@ -48,11 +48,9 @@ export default function Navbar() {
       ref={navRef}
       className="fixed top-0 inset-x-0 z-[200] transition-all duration-500"
       style={{
-        background: scrolled
-          ? 'rgba(8,7,6,0.85)'
-          : 'transparent',
+        background: scrolled ? 'rgba(255,255,255,0.92)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px) saturate(1.5)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(242,235,224,0.07)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(34,31,28,0.07)' : 'none',
       }}
     >
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto h-16 flex items-center justify-between">
@@ -61,12 +59,12 @@ export default function Navbar() {
           href="#hero"
           onClick={e => scrollTo(e, '#hero')}
           className="font-cormorant text-xl font-semibold tracking-wide"
-          style={{ color: '#F2EBE0' }}
+          style={{ color: '#221F1C' }}
         >
-          Ibtissam<span style={{ color: '#E8A020' }}>.</span>
+          Ibtissam<span style={{ color: '#D9920E' }}>.</span>
         </a>
 
-        {/* Links — hidden on mobile */}
+        {/* Links */}
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
             <a
@@ -75,7 +73,7 @@ export default function Navbar() {
               onClick={e => scrollTo(e, href)}
               className="font-mono text-[0.62rem] tracking-[0.22em] uppercase transition-colors duration-300"
               style={{
-                color: active === href ? '#E8A020' : '#BDB0A5',
+                color: active === href ? '#D9920E' : '#9B968F',
               }}
             >
               {label}
@@ -87,10 +85,10 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={e => scrollTo(e, '#contact')}
-          className="hidden md:flex items-center gap-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase px-4 py-2 border transition-all duration-300 hover:bg-amber hover:border-amber hover:text-bg"
+          className="hidden md:flex items-center gap-2 font-mono text-[0.62rem] tracking-[0.18em] uppercase px-5 py-2 rounded-full transition-all duration-300 hover:opacity-80"
           style={{
-            color: '#E8A020',
-            borderColor: 'rgba(232,160,32,0.35)',
+            background: '#221F1C',
+            color: '#FFFFFF',
           }}
         >
           Contact
@@ -126,7 +124,7 @@ function MobileMenu() {
             key={i}
             className="block w-6 h-[1.5px] transition-all duration-300"
             style={{
-              background: '#F2EBE0',
+              background: '#221F1C',
               transform: open
                 ? i === 0 ? 'translateY(6.5px) rotate(45deg)' : i === 2 ? 'translateY(-6.5px) rotate(-45deg)' : 'scaleX(0)'
                 : 'none',
@@ -138,14 +136,14 @@ function MobileMenu() {
       {open && (
         <div
           className="fixed inset-0 top-16 z-[190] flex flex-col items-center justify-center gap-8"
-          style={{ background: 'rgba(8,7,6,0.97)', backdropFilter: 'blur(20px)' }}
+          style={{ background: 'rgba(243,241,236,0.97)', backdropFilter: 'blur(20px)' }}
         >
           {NAV_LINKS.map(({ label, href }) => (
             <button
               key={href}
               onClick={() => scrollTo(href)}
               className="font-cormorant text-4xl font-light"
-              style={{ color: '#F2EBE0' }}
+              style={{ color: '#221F1C' }}
             >
               {label}
             </button>

@@ -15,8 +15,8 @@
   }
 
   body {
-    background-color: #080706;
-    color: #F2EBE0;
+    background-color: #F3F1EC;
+    color: #221F1C;
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     height: 2px;
-    background: #E8A020;
+    background: #D9920E;
     z-index: 9998;
     transform-origin: left;
     transform: scaleX(0);
@@ -50,12 +50,12 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
     letter-spacing: 0.25em;
-    color: #9E908A;
+    color: #9B968F;
   }
 
   /* Amber border-left accent */
   .amber-line {
-    border-left: 2px solid #E8A020;
+    border-left: 2px solid #D9920E;
     padding-left: 1.25rem;
   }
 
@@ -90,7 +90,7 @@
 
   /* Gradient text */
   .text-gradient-amber {
-    background: linear-gradient(135deg, #E8A020 0%, #F5C842 50%, #E8A020 100%);
+    background: linear-gradient(135deg, #D9920E 0%, #F0B030 50%, #D9920E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -98,16 +98,16 @@
 
   /* Hairline border */
   .border-hairline {
-    border-color: rgba(242, 235, 224, 0.07);
+    border-color: rgba(34, 31, 28, 0.07);
   }
 
   .border-visible {
-    border-color: rgba(242, 235, 224, 0.15);
+    border-color: rgba(34, 31, 28, 0.12);
   }
 
   /* Amber glow box shadow */
   .shadow-amber {
-    box-shadow: 0 0 40px rgba(232, 160, 32, 0.08);
+    box-shadow: 0 0 40px rgba(217, 146, 14, 0.08);
   }
 
   /* Noise texture overlay */

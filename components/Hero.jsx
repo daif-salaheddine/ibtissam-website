@@ -1,11 +1,8 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import dynamic from 'next/dynamic'
 import { hero } from '@/lib/data'
 import MagneticButton from '@/components/ui/MagneticButton'
-
-const HeroCanvas = dynamic(() => import('@/components/HeroCanvas'), { ssr: false })
 
 const NAME_FIRST = hero.firstName.toUpperCase()
 const NAME_LAST  = hero.lastName.toUpperCase()
@@ -17,13 +14,11 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0)
   const [visible, setVisible] = useState(false)
 
-  // Animate hero in
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 100)
     return () => clearTimeout(t)
   }, [])
 
-  // Role carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIdx(i => (i + 1) % hero.roles.length)
@@ -31,7 +26,6 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [])
 
-  // GSAP letter reveal
   useEffect(() => {
     if (!visible) return
     const go = async () => {
@@ -61,19 +55,8 @@ export default function Hero() {
       id="hero"
       ref={containerRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: '#080706' }}
+      style={{ background: 'transparent' }}
     >
-      {/* Three.js particle field */}
-      <HeroCanvas />
-
-      {/* Radial amber glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 70% 60% at 50% 40%, rgba(232,160,32,0.07) 0%, transparent 70%)',
-        }}
-      />
-
       {/* Content */}
       <div
         className="relative z-10 w-full px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto flex flex-col items-start"
@@ -82,7 +65,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <p
           className="font-mono text-[0.6rem] md:text-[0.7rem] tracking-[0.35em] uppercase mb-8"
-          style={{ color: '#9E908A' }}
+          style={{ color: '#9B968F' }}
         >
           {hero.eyebrow}
         </p>
@@ -95,12 +78,12 @@ export default function Hero() {
         >
           <div ref={firstRef} className="overflow-hidden">
             {NAME_FIRST.split('').map((ch, i) => (
-              <span key={i} className="inline-block" style={{ color: '#F2EBE0' }}>{ch}</span>
+              <span key={i} className="inline-block" style={{ color: '#221F1C' }}>{ch}</span>
             ))}
           </div>
           <div ref={lastRef} className="overflow-hidden">
             {NAME_LAST.split('').map((ch, i) => (
-              <span key={i} className="inline-block" style={{ color: '#E8A020' }}>{ch}</span>
+              <span key={i} className="inline-block" style={{ color: '#D9920E' }}>{ch}</span>
             ))}
           </div>
         </h1>
@@ -119,7 +102,7 @@ export default function Hero() {
               <span
                 key={i}
                 className="font-cormorant italic font-light text-2xl md:text-3xl h-8 flex items-center justify-center"
-                style={{ color: '#BDB0A5' }}
+                style={{ color: '#6B6560' }}
               >
                 {role}
               </span>
@@ -130,7 +113,7 @@ export default function Hero() {
         {/* Tagline */}
         <p
           className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-2xl leading-relaxed"
-          style={{ color: '#BDB0A5' }}
+          style={{ color: '#6B6560' }}
         >
           {hero.tagline}
         </p>
@@ -138,7 +121,7 @@ export default function Hero() {
         {/* Location */}
         <p
           className="mt-3 font-mono text-[0.6rem] tracking-[0.25em] uppercase"
-          style={{ color: '#9E908A' }}
+          style={{ color: '#9B968F' }}
         >
           {hero.location}
         </p>
@@ -147,15 +130,15 @@ export default function Hero() {
         <div className="mt-12 flex items-center gap-6 self-start">
           <MagneticButton
             onClick={scrollDown}
-            className="px-8 py-3 border font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-amber hover:text-bg"
-            style={{ color: '#E8A020', borderColor: 'rgba(232,160,32,0.4)' }}
+            className="px-8 py-3.5 font-mono text-[0.65rem] tracking-[0.2em] uppercase rounded-full transition-all duration-300 hover:opacity-80"
+            style={{ background: '#221F1C', color: '#FFFFFF', border: 'none' }}
           >
             View Work
           </MagneticButton>
           <a
             href="mailto:ibtissamdaif02@gmail.com"
-            className="font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300 hover:text-amber"
-            style={{ color: '#9E908A' }}
+            className="font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300"
+            style={{ color: '#8A5C0A' }}
           >
             Get in Touch →
           </a>
@@ -171,9 +154,9 @@ export default function Hero() {
       >
         <div
           className="w-[1px] h-12 origin-top animate-blink"
-          style={{ background: 'rgba(232,160,32,0.5)' }}
+          style={{ background: 'rgba(217,146,14,0.5)' }}
         />
-        <span className="font-mono text-[0.5rem] tracking-[0.3em] uppercase" style={{ color: '#9E908A' }}>
+        <span className="font-mono text-[0.5rem] tracking-[0.3em] uppercase" style={{ color: '#9B968F' }}>
           Scroll
         </span>
       </button>

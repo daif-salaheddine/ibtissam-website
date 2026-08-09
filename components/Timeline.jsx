@@ -1,22 +1,19 @@
-﻿'use client'
+'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { timeline } from '@/lib/data'
 
 export default function Timeline() {
   const sectionRef = useRef(null)
   const lineRef = useRef(null)
 
-  // Animate timeline line and entries on scroll
   useEffect(() => {
     const el = sectionRef.current
     if (!el) return
 
-    // Line draw via scroll
     const lineEl = lineRef.current
     const entries = el.querySelectorAll('[data-tl-item]')
 
-    // Entries: fade + slide from alternate sides
     const obs = new IntersectionObserver(
       items => items.forEach(item => {
         if (item.isIntersecting) {
@@ -35,7 +32,6 @@ export default function Timeline() {
       obs.observe(entry)
     })
 
-    // Scroll-driven line height
     let lineObs
     if (lineEl) {
       const update = () => {
@@ -67,11 +63,11 @@ export default function Timeline() {
       </div>
       <h2
         className="font-cormorant font-light leading-tight mb-4"
-        style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
+        style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
       >
-        What I've <em>built and changed</em>
+        What I&apos;ve <em>built and changed</em>
       </h2>
-      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9E908A' }}>
+      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9B968F' }}>
         Selected roles focused on outcomes and strategic contributions.
       </p>
 
@@ -80,13 +76,13 @@ export default function Timeline() {
         {/* Vertical line */}
         <div
           className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] origin-top"
-          style={{ background: 'rgba(242,235,224,0.07)' }}
+          style={{ background: 'rgba(34,31,28,0.08)' }}
         >
           <div
             ref={lineRef}
             className="absolute inset-0 origin-top will-change-transform"
             style={{
-              background: 'linear-gradient(to bottom, #E8A020, rgba(232,160,32,0.1))',
+              background: 'linear-gradient(to bottom, #D9920E, rgba(217,146,14,0.1))',
               transform: 'scaleY(0)',
             }}
           />
@@ -106,8 +102,8 @@ export default function Timeline() {
               <div
                 className="absolute left-0 md:left-1/2 top-1 w-3 h-3 rounded-full border-2 -translate-x-1/2"
                 style={{
-                  borderColor: '#E8A020',
-                  background: item.metric ? '#E8A020' : '#080706',
+                  borderColor: '#D9920E',
+                  background: item.metric ? '#D9920E' : '#FFFFFF',
                 }}
               />
 
@@ -116,24 +112,24 @@ export default function Timeline() {
                 {/* Date / Org */}
                 <div
                   className="font-mono text-[0.58rem] tracking-[0.2em] uppercase mb-1"
-                  style={{ color: '#9E908A' }}
+                  style={{ color: '#9B968F' }}
                 >
                   {item.date}
                 </div>
                 <div
                   className="font-cormorant font-semibold text-lg md:text-2xl mb-0.5"
-                  style={{ color: '#E8A020' }}
+                  style={{ color: '#D9920E' }}
                 >
                   {item.org}
                 </div>
-                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9E908A' }}>
+                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9B968F' }}>
                   {item.place}
                 </div>
 
                 {/* Role */}
                 <h3
                   className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug"
-                  style={{ color: '#F2EBE0' }}
+                  style={{ color: '#221F1C' }}
                 >
                   {item.role}
                 </h3>
@@ -143,19 +139,19 @@ export default function Timeline() {
                   <span
                     className="inline-block font-mono text-[0.55rem] tracking-[0.15em] uppercase px-3 py-1.5 mb-3"
                     style={{
-                      color: '#5C9B52',
-                      background: 'rgba(92,155,82,0.1)',
-                      border: '1px solid rgba(92,155,82,0.25)',
+                      color: '#3D8030',
+                      background: 'rgba(61,128,48,0.10)',
+                      border: '1px solid rgba(61,128,48,0.25)',
                     }}
                   >
                     ↑ {item.metric}
                   </span>
                 )}
 
-                <p className="font-dm text-base leading-relaxed" style={{ color: '#BDB0A5' }}>
+                <p className="font-dm text-base leading-relaxed" style={{ color: '#6B6560' }}>
                   {item.preview}
                 </p>
-                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9E908A' }}>
+                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9B968F' }}>
                   {item.body}
                 </p>
 
@@ -163,14 +159,14 @@ export default function Timeline() {
                 {item.photo && (
                   <div
                     className="mt-5 overflow-hidden"
-                    style={{ border: '1px solid rgba(242,235,224,0.07)' }}
+                    style={{ border: '1px solid rgba(34,31,28,0.08)' }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item.photo}
                       alt={`${item.org} — ${item.role}`}
                       className="w-full object-cover"
-                      style={{ maxHeight: '260px', filter: 'grayscale(15%)' }}
+                      style={{ maxHeight: '260px', filter: 'grayscale(10%)' }}
                     />
                   </div>
                 )}

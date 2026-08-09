@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef } from 'react'
 import { testimonials } from '@/lib/data'
@@ -34,7 +34,7 @@ export default function Testimonials() {
       id="testimonials"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: '#111009', borderTop: '1px solid rgba(242,235,224,0.07)' }}
+      style={{ background: '#F8F5EE' }}
     >
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
@@ -43,7 +43,7 @@ export default function Testimonials() {
         <h2
           data-reveal
           className="font-cormorant font-light leading-tight mb-16"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
+          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#221F1C' }}
         >
           In their own <em>words</em>
         </h2>
@@ -54,13 +54,13 @@ export default function Testimonials() {
               key={i}
               data-reveal
               className="border-t-2 pt-8"
-              style={{ borderColor: 'rgba(232,160,32,0.25)' }}
+              style={{ borderColor: 'rgba(217,146,14,0.35)' }}
             >
               <blockquote
                 className="font-cormorant italic font-light leading-relaxed mb-8"
                 style={{
                   fontSize: 'clamp(1.15rem, 1.8vw, 1.5rem)',
-                  color: t.placeholder ? 'rgba(242,235,224,0.25)' : '#F2EBE0',
+                  color: t.placeholder ? 'rgba(34,31,28,0.25)' : '#221F1C',
                 }}
               >
                 {t.quote}
@@ -68,13 +68,13 @@ export default function Testimonials() {
               <div>
                 <div
                   className="font-dm text-sm font-medium"
-                  style={{ color: t.placeholder ? 'rgba(232,160,32,0.35)' : '#E8A020' }}
+                  style={{ color: t.placeholder ? 'rgba(217,146,14,0.4)' : '#D9920E' }}
                 >
                   {t.name}
                 </div>
                 <div
                   className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mt-1"
-                  style={{ color: '#9E908A' }}
+                  style={{ color: '#9B968F' }}
                 >
                   {t.title}, {t.org}
                 </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
         {testimonials.some(t => t.placeholder) && (
           <p
             className="mt-12 font-mono text-[0.58rem] tracking-[0.18em] uppercase"
-            style={{ color: 'rgba(232,160,32,0.35)' }}
+            style={{ color: 'rgba(138,92,10,0.5)' }}
           >
             ↑ Placeholder — replace with real testimonials before sharing the link
           </p>

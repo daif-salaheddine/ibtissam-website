@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef, useEffect } from 'react'
 import { contact } from '@/lib/data'
@@ -35,7 +35,7 @@ export default function Contact() {
       id="contact"
       ref={sectionRef}
       className="py-32 md:py-40 min-h-screen flex flex-col justify-center relative overflow-hidden"
-      style={{ background: '#0A0806', borderTop: '1px solid rgba(242,235,224,0.05)' }}
+      style={{ background: 'transparent' }}
     >
       {/* Background name watermark */}
       <div
@@ -46,7 +46,7 @@ export default function Contact() {
           className="font-cormorant font-light leading-none whitespace-nowrap"
           style={{
             fontSize: 'clamp(6rem, 22vw, 20rem)',
-            color: 'rgba(232,160,32,0.03)',
+            color: 'rgba(217,146,14,0.04)',
             letterSpacing: '-0.02em',
           }}
         >
@@ -58,7 +58,7 @@ export default function Contact() {
         {/* Section number */}
         <div data-reveal className="flex items-center gap-4 mb-16">
           <span className="sec-num">08</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
+          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#9B968F' }}>
             Start a Conversation
           </span>
         </div>
@@ -67,7 +67,7 @@ export default function Contact() {
         <div
           data-reveal
           className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-6"
-          style={{ color: '#9E908A' }}
+          style={{ color: '#9B968F' }}
         >
           {contact.eyebrow}
         </div>
@@ -76,13 +76,13 @@ export default function Contact() {
         <div data-reveal className="mb-6">
           <div
             className="font-cormorant font-light leading-[0.9] block"
-            style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#F2EBE0' }}
+            style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#221F1C' }}
           >
             Ibtissam
           </div>
           <div
             className="font-cormorant italic font-semibold leading-[0.9] block"
-            style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#E8A020' }}
+            style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#D9920E' }}
           >
             Daif
           </div>
@@ -92,7 +92,7 @@ export default function Contact() {
         <p
           data-reveal
           className="font-mono text-[0.65rem] tracking-[0.2em] uppercase mb-8"
-          style={{ color: '#9E908A' }}
+          style={{ color: '#9B968F' }}
         >
           {contact.creds}
         </p>
@@ -101,7 +101,7 @@ export default function Contact() {
         <blockquote
           data-reveal
           className="font-cormorant italic font-light leading-relaxed mb-12 max-w-2xl"
-          style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#BDB0A5' }}
+          style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: '#6B6560' }}
         >
           {contact.quote}
         </blockquote>
@@ -110,8 +110,8 @@ export default function Contact() {
         <div data-reveal className="mb-16">
           <MagneticButton
             href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-4 px-10 py-4 border font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-all duration-400 hover:bg-amber hover:text-bg hover:border-amber group"
-            style={{ color: '#E8A020', borderColor: 'rgba(232,160,32,0.4)' }}
+            className="inline-flex items-center gap-4 px-10 py-4 font-mono text-[0.65rem] tracking-[0.2em] uppercase rounded-full transition-all duration-300 hover:opacity-80 group"
+            style={{ background: '#221F1C', color: '#FFFFFF', border: 'none' }}
           >
             Start a conversation
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -122,34 +122,34 @@ export default function Contact() {
         <div
           data-reveal
           className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t"
-          style={{ borderColor: 'rgba(242,235,224,0.07)' }}
+          style={{ borderColor: 'rgba(34,31,28,0.08)' }}
         >
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9B968F' }}>
               Phone
             </div>
             <a
               href={`tel:${contact.phone.replace(/\s/g, '')}`}
               className="font-dm text-sm transition-colors duration-300 hover:text-amber"
-              style={{ color: '#F2EBE0' }}
+              style={{ color: '#221F1C' }}
             >
               {contact.phone}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9B968F' }}>
               Email
             </div>
             <a
               href={`mailto:${contact.email}`}
               className="font-dm text-sm transition-colors duration-300 hover:text-amber break-all"
-              style={{ color: '#F2EBE0' }}
+              style={{ color: '#221F1C' }}
             >
               {contact.email}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9B968F' }}>
               LinkedIn
             </div>
             <a
@@ -157,16 +157,16 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-dm text-sm transition-colors duration-300 hover:text-amber"
-              style={{ color: '#F2EBE0' }}
+              style={{ color: '#221F1C' }}
             >
               {contact.linkedin}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9E908A' }}>
+            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: '#9B968F' }}>
               Based Between
             </div>
-            <span className="font-dm text-sm" style={{ color: '#F2EBE0' }}>
+            <span className="font-dm text-sm" style={{ color: '#221F1C' }}>
               {contact.location}
             </span>
           </div>

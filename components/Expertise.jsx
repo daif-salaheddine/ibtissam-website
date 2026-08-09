@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import { expertise } from '@/lib/data'
@@ -8,7 +8,6 @@ export default function Expertise() {
   const [active, setActive] = useState(0)
   const panelRefs = useRef([])
 
-  // GSAP scroll-pinned expertise on desktop
   useEffect(() => {
     if (typeof window === 'undefined' || window.innerWidth < 1024) return
 
@@ -22,7 +21,6 @@ export default function Expertise() {
         const panels = panelRefs.current.filter(Boolean)
         if (panels.length < 3) return
 
-        // Start panels 2 & 3 off to the right
         gsap.set([panels[1], panels[2]], { xPercent: 100 })
 
         const tl = gsap.timeline({
@@ -58,15 +56,13 @@ export default function Expertise() {
       id="expertise"
       ref={containerRef}
       className="min-h-screen overflow-hidden"
-      style={{ background: '#080706' }}
+      style={{ background: 'transparent' }}
     >
       <div className="relative w-full min-h-screen flex flex-col lg:block">
-        {/* Section label — absolute on desktop */}
-        <div
-          className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4"
-        >
+        {/* Section label */}
+        <div className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4">
           <span className="sec-num">02</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: '#9E908A' }}>
+          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: '#9B968F' }}>
             Three Pillars, Integrated by Design
           </span>
         </div>
@@ -85,6 +81,7 @@ export default function Expertise() {
               key={i}
               ref={el => panelRefs.current[i] = el}
               className="absolute inset-0 will-change-transform"
+              style={{ background: '#FFFFFF' }}
             >
               <PillarCard pillar={pillar} index={i} />
             </div>
@@ -97,18 +94,16 @@ export default function Expertise() {
 
 function PillarCard({ pillar, index, mobile = false }) {
   return (
-    <div
-      className={`${mobile ? '' : 'h-full flex items-center justify-center'}`}
-    >
+    <div className={`${mobile ? '' : 'h-full flex items-center justify-center'}`}>
       <div className={`${mobile ? '' : 'w-full max-w-[1400px] mx-auto px-12'} grid lg:grid-cols-2 gap-16 items-center`}>
         {/* Left: roman numeral + tags */}
         <div className="relative">
-          {/* Huge watermark number */}
+          {/* Watermark number */}
           <div
             className="absolute -top-8 -left-4 font-cormorant font-light leading-none pointer-events-none select-none"
             style={{
               fontSize: 'clamp(8rem, 20vw, 18rem)',
-              color: 'rgba(232,160,32,0.04)',
+              color: 'rgba(217,146,14,0.06)',
               lineHeight: 1,
             }}
             aria-hidden="true"
@@ -124,9 +119,9 @@ function PillarCard({ pillar, index, mobile = false }) {
                   key={tag}
                   className="font-mono text-[0.52rem] tracking-[0.18em] uppercase px-2.5 py-1 border"
                   style={{
-                    color: '#C07820',
-                    borderColor: 'rgba(232,160,32,0.2)',
-                    background: 'rgba(232,160,32,0.04)',
+                    color: '#8A5C0A',
+                    borderColor: 'rgba(138,92,10,0.2)',
+                    background: 'rgba(217,146,14,0.07)',
                   }}
                 >
                   {tag}
@@ -137,13 +132,13 @@ function PillarCard({ pillar, index, mobile = false }) {
             {/* Title */}
             <h2
               className="font-cormorant font-semibold leading-tight mb-2"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', color: '#F2EBE0' }}
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', color: '#221F1C' }}
             >
               {pillar.title}
             </h2>
             <div
               className="font-mono text-[0.6rem] tracking-[0.22em] uppercase mb-8"
-              style={{ color: '#9E908A' }}
+              style={{ color: '#9B968F' }}
             >
               {pillar.sub}
             </div>
@@ -152,23 +147,23 @@ function PillarCard({ pillar, index, mobile = false }) {
             <div
               className="p-5 border-l-2"
               style={{
-                borderColor: '#E8A020',
-                background: 'rgba(232,160,32,0.05)',
+                borderColor: '#D9920E',
+                background: 'rgba(217,146,14,0.06)',
               }}
             >
-              <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-1.5" style={{ color: '#E8A020' }}>
+              <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-1.5" style={{ color: '#8A5C0A' }}>
                 Outcome
               </div>
-              <p className="font-dm text-sm leading-relaxed" style={{ color: '#BDB0A5' }}>
+              <p className="font-dm text-sm leading-relaxed" style={{ color: '#6B6560' }}>
                 {pillar.outcome.text}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Right: list */}
+        {/* Right: capabilities list */}
         <div>
-          <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-6" style={{ color: '#9E908A' }}>
+          <div className="font-mono text-[0.6rem] tracking-[0.2em] uppercase mb-6" style={{ color: '#9B968F' }}>
             Core Capabilities
           </div>
           <ul className="space-y-3">
@@ -176,9 +171,9 @@ function PillarCard({ pillar, index, mobile = false }) {
               <li
                 key={i}
                 className="flex items-start gap-3 font-dm text-sm md:text-base leading-relaxed"
-                style={{ color: i < pillar.preview.length ? '#F2EBE0' : '#BDB0A5' }}
+                style={{ color: i < pillar.preview.length ? '#221F1C' : '#6B6560' }}
               >
-                <span style={{ color: '#E8A020', marginTop: 2, flexShrink: 0 }}>→</span>
+                <span style={{ color: '#D9920E', marginTop: 2, flexShrink: 0 }}>→</span>
                 {item}
               </li>
             ))}

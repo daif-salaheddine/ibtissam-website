@@ -17,41 +17,50 @@ import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
+const cardStyle = {
+  background: '#FFFFFF',
+  borderRadius: 28,
+  boxShadow: '0 1px 3px rgba(34,31,28,0.04), 0 8px 32px rgba(34,31,28,0.07)',
+  overflow: 'hidden',
+}
+
+// Expertise is scroll-pinned via GSAP — no overflow:hidden so pin doesn't clip
+const expertiseCardStyle = {
+  background: '#FFFFFF',
+  borderRadius: 28,
+  boxShadow: '0 1px 3px rgba(34,31,28,0.04), 0 8px 32px rgba(34,31,28,0.07)',
+}
+
 export default function Page() {
   const [loading, setLoading] = useState(true)
 
-  // Initialize Lenis smooth scroll + GSAP ScrollTrigger globally
   useLenis()
 
   return (
     <>
-      {/* Scroll progress bar */}
       <div id="scroll-progress" />
 
-      {/* Loader overlay */}
       <AnimatePresence>
-        {loading && (
-          <Loader onComplete={() => setLoading(false)} />
-        )}
+        {loading && <Loader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
 
-      {/* Custom cursor (desktop only) */}
       <Cursor />
 
-      {/* Main site content */}
       {!loading && (
         <>
           <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Expertise />
-            <Masterclasses />
-            <Testimonials />
-            <Timeline />
-            <Philosophy />
-            <Projects />
-            <Contact />
+          <main style={{ background: '#F3F1EC', padding: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={cardStyle}><Hero /></div>
+              <div style={cardStyle}><About /></div>
+              <div style={expertiseCardStyle}><Expertise /></div>
+              <div style={cardStyle}><Masterclasses /></div>
+              <div style={cardStyle}><Testimonials /></div>
+              <div style={cardStyle}><Timeline /></div>
+              <div style={cardStyle}><Philosophy /></div>
+              <div style={cardStyle}><Projects /></div>
+              <div style={cardStyle}><Contact /></div>
+            </div>
           </main>
           <Footer />
         </>
