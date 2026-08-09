@@ -65,7 +65,7 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={e => scrollTo(e, href)}
-              className="font-mono text-[0.6rem] tracking-[0.22em] uppercase transition-colors duration-300"
+              className="font-mono text-[0.8rem] tracking-[0.16em] uppercase transition-colors duration-300"
               style={{ color: active === href ? '#C4973A' : '#9A8E84' }}
             >
               {label}
@@ -77,7 +77,7 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={e => scrollTo(e, '#contact')}
-          className="hidden md:inline-flex items-center font-mono text-[0.6rem] tracking-[0.2em] uppercase px-5 py-2.5 transition-all duration-300 hover:bg-[#2A2218] hover:text-white"
+          className="hidden md:inline-flex items-center font-mono text-[0.8rem] font-medium tracking-[0.15em] uppercase px-5 py-2.5 transition-all duration-300 hover:bg-[#2A2218] hover:text-white"
           style={{
             border: '1px solid rgba(42,34,24,0.3)',
             color: '#2A2218',

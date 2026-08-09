@@ -39,10 +39,10 @@ export default function Projects() {
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">07</span>
         </div>
-        <h2 data-reveal className="font-cormorant font-light leading-tight mb-4" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
-          Credibility built <em>through practice</em>
+        <h2 data-reveal className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#2A2218' }}>
+          Credibility built through practice
         </h2>
-        <p data-reveal className="font-dm text-sm leading-relaxed mb-14 max-w-xl" style={{ color: '#9A8E84' }}>
+        <p data-reveal className="font-dm text-base leading-[1.65] mb-14 max-w-xl" style={{ color: '#9A8E84' }}>
           Selected engagements illustrating scope, depth, and the organizational trust that takes years to earn.
         </p>
 
@@ -56,7 +56,7 @@ export default function Projects() {
       {/* Client ticker */}
       <div className="py-10 border-t border-b" style={{ borderColor: 'rgba(42,34,24,0.08)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-20 xl:px-28">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9A8E84' }}>Clients</span>
+          <span className="font-mono text-[0.75rem] tracking-[0.15em] uppercase" style={{ color: '#9A8E84' }}>Clients</span>
         </div>
         <Ticker items={clients} speed="normal" />
       </div>
@@ -64,7 +64,7 @@ export default function Projects() {
       {/* Speaking ticker */}
       <div className="py-8 border-b" style={{ borderColor: 'rgba(42,34,24,0.08)' }}>
         <div className="mb-4 px-8 md:px-16 lg:px-20 xl:px-28">
-          <span className="font-mono text-[0.55rem] tracking-[0.25em] uppercase" style={{ color: '#9A8E84' }}>Speaking &amp; Media</span>
+          <span className="font-mono text-[0.75rem] tracking-[0.15em] uppercase" style={{ color: '#9A8E84' }}>Speaking &amp; Media</span>
         </div>
         <Ticker items={speaking} speed="fast" />
       </div>
@@ -95,7 +95,7 @@ function ProjectCard({ project, index }) {
         {String(index + 1).padStart(2, '0')}
       </div>
 
-      <div className="font-mono text-[0.52rem] tracking-[0.2em] uppercase mb-3 transition-colors duration-300" style={{ color: hover ? '#C4973A' : '#9A8E84' }}>
+      <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-3 transition-colors duration-300" style={{ color: hover ? '#C4973A' : '#9A8E84' }}>
         {project.client}
       </div>
 
@@ -103,8 +103,8 @@ function ProjectCard({ project, index }) {
         {project.title}
       </h3>
 
-      <p className="font-dm text-sm leading-relaxed mb-2" style={{ color: '#5A5048' }}>{project.preview}</p>
-      <p className="font-dm text-xs leading-relaxed" style={{ color: '#9A8E84' }}>{project.body}</p>
+      <p className="font-dm text-base leading-[1.65] mb-2" style={{ color: '#5A5048' }}>{project.preview}</p>
+      <p className="font-dm text-sm leading-[1.6]" style={{ color: '#9A8E84' }}>{project.body}</p>
 
       <div
         className="absolute bottom-0 left-0 h-[1px] transition-all duration-500"

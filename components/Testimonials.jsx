@@ -67,10 +67,10 @@ export default function Testimonials() {
         </div>
         <h2
           data-reveal
-          className="font-cormorant font-light leading-tight mb-16"
-          style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#FFFFFF' }}
+          className="font-cormorant font-semibold leading-[1.2] mb-16"
+          style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#FFFFFF' }}
         >
-          In their own <em>words</em>
+          In their own words
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10 md:gap-16">
@@ -82,9 +82,9 @@ export default function Testimonials() {
               style={{ borderColor: 'rgba(255,255,255,0.25)' }}
             >
               <blockquote
-                className="font-cormorant italic font-light leading-relaxed mb-8"
+                className="font-cormorant italic font-normal leading-[1.55] mb-8"
                 style={{
-                  fontSize: 'clamp(1.15rem, 1.8vw, 1.5rem)',
+                  fontSize: 'clamp(1.1rem, 1.4vw, 1.35rem)',
                   color: t.placeholder ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.95)',
                 }}
               >
@@ -94,7 +94,7 @@ export default function Testimonials() {
                 <div className="font-dm text-sm font-medium" style={{ color: t.placeholder ? 'rgba(255,255,255,0.3)' : '#FFFFFF' }}>
                   {t.name}
                 </div>
-                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                <div className="font-mono text-[0.75rem] tracking-[0.1em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
                   {t.title}, {t.org}
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Testimonials() {
         </div>
 
         {testimonials.some(t => t.placeholder) && (
-          <p className="mt-12 font-mono text-[0.58rem] tracking-[0.18em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
+          <p className="mt-12 font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
             ↑ Placeholder — replace with real testimonials before sharing the link
           </p>
         )}

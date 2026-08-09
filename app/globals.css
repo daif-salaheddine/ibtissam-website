@@ -44,15 +44,15 @@
 @layer utilities {
   .sec-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
     color: #9A8E84;
   }
 
   .sec-num-light {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
     color: rgba(255,255,255,0.5);
   }
 
@@ -109,8 +109,9 @@
     gap: 0.75rem;
     padding: 0.75rem 2rem;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     border: 1px solid rgba(42,34,24,0.3);
     background: transparent;
@@ -129,8 +130,9 @@
     gap: 0.75rem;
     padding: 0.75rem 2rem;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     border: 1px solid rgba(255,255,255,0.5);
     background: transparent;

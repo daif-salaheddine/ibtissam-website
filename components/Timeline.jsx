@@ -58,10 +58,10 @@ export default function Timeline() {
       <div className="flex items-center gap-4 mb-6">
         <span className="sec-num">05</span>
       </div>
-      <h2 className="font-cormorant font-light leading-tight mb-4" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
-        What I&apos;ve <em>built and changed</em>
+      <h2 className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#2A2218' }}>
+        What I&apos;ve built and changed
       </h2>
-      <p className="font-dm text-sm leading-relaxed mb-16 max-w-xl" style={{ color: '#9A8E84' }}>
+      <p className="font-dm text-base leading-[1.65] mb-16 max-w-xl" style={{ color: '#9A8E84' }}>
         Selected roles focused on outcomes and strategic contributions.
       </p>
 
@@ -91,9 +91,9 @@ export default function Timeline() {
               />
 
               <div className={i % 2 === 0 ? 'md:text-right' : 'md:col-start-2'}>
-                <div className="font-mono text-[0.58rem] tracking-[0.2em] uppercase mb-1" style={{ color: '#9A8E84' }}>{item.date}</div>
+                <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-1" style={{ color: '#9A8E84' }}>{item.date}</div>
                 <div className="font-cormorant font-semibold text-lg md:text-2xl mb-0.5" style={{ color: '#C4973A' }}>{item.org}</div>
-                <div className="font-mono text-[0.55rem] tracking-[0.15em] uppercase mb-4" style={{ color: '#9A8E84' }}>{item.place}</div>
+                <div className="font-mono text-[0.75rem] tracking-[0.1em] uppercase mb-4" style={{ color: '#9A8E84' }}>{item.place}</div>
 
                 <h3 className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug" style={{ color: '#2A2218' }}>
                   {item.role}
@@ -101,7 +101,7 @@ export default function Timeline() {
 
                 {item.metric && (
                   <span
-                    className="inline-block font-mono text-[0.55rem] tracking-[0.15em] uppercase px-3 py-1.5 mb-3"
+                    className="inline-block font-mono text-[0.75rem] tracking-[0.1em] uppercase px-3 py-1.5 mb-3"
                     style={{ color: '#3D6840', background: 'rgba(61,104,64,0.10)', border: '1px solid rgba(61,104,64,0.25)' }}
                   >
                     ↑ {item.metric}
@@ -109,7 +109,7 @@ export default function Timeline() {
                 )}
 
                 <p className="font-dm text-base leading-relaxed" style={{ color: '#5A5048' }}>{item.preview}</p>
-                <p className="font-dm text-sm leading-relaxed mt-2" style={{ color: '#9A8E84' }}>{item.body}</p>
+                <p className="font-dm text-base leading-[1.65] mt-2" style={{ color: '#9A8E84' }}>{item.body}</p>
 
                 {item.photo && (
                   <div className="mt-5 overflow-hidden" style={{ border: '1px solid rgba(42,34,24,0.08)' }}>

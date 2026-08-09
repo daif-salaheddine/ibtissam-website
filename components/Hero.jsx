@@ -57,14 +57,14 @@ export default function Hero() {
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s' }}
       >
         {/* Eyebrow */}
-        <p className="font-mono text-[0.6rem] tracking-[0.35em] uppercase mb-8" style={{ color: '#9A8E84' }}>
+        <p className="font-mono text-[0.8rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
           {hero.eyebrow}
         </p>
 
         {/* Name */}
         <h1
           className="font-cormorant font-semibold leading-[0.88] select-none"
-          style={{ fontSize: 'clamp(3.8rem, 13vw, 13rem)' }}
+          style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           aria-label={`${hero.firstName} ${hero.lastName}`}
         >
           <div ref={firstRef} className="overflow-hidden">
@@ -86,7 +86,7 @@ export default function Hero() {
             style={{ transform: `translateY(${-roleIdx * 32}px)` }}
           >
             {hero.roles.map((role, i) => (
-              <span key={i} className="font-cormorant italic font-light text-2xl md:text-3xl h-8 flex items-center" style={{ color: '#5A5048' }}>
+              <span key={i} className="font-cormorant font-normal text-xl md:text-2xl h-8 flex items-center" style={{ color: '#5A5048' }}>
                 {role}
               </span>
             ))}
@@ -94,12 +94,12 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className="mt-6 font-cormorant italic font-light text-xl md:text-2xl max-w-2xl leading-relaxed" style={{ color: '#5A5048' }}>
+        <p className="mt-6 font-dm text-base md:text-lg max-w-[640px] leading-[1.7]" style={{ color: '#5A5048' }}>
           {hero.tagline}
         </p>
 
         {/* Location */}
-        <p className="mt-3 font-mono text-[0.6rem] tracking-[0.25em] uppercase" style={{ color: '#9A8E84' }}>
+        <p className="mt-3 font-mono text-[0.8rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>
           {hero.location}
         </p>
 
@@ -110,7 +110,7 @@ export default function Hero() {
           </MagneticButton>
           <a
             href="mailto:ibtissamdaif02@gmail.com"
-            className="font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300"
+            className="font-mono text-[0.8rem] tracking-[0.15em] uppercase transition-colors duration-300"
             style={{ color: '#9A8E84' }}
           >
             Get in Touch
@@ -126,7 +126,7 @@ export default function Hero() {
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s 1.2s' }}
       >
         <div className="w-[1px] h-12 origin-top animate-blink" style={{ background: 'rgba(196,151,58,0.5)' }} />
-        <span className="font-mono text-[0.5rem] tracking-[0.3em] uppercase" style={{ color: '#9A8E84' }}>Scroll</span>
+        <span className="font-mono text-[0.75rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>Scroll</span>
       </button>
     </section>
   )

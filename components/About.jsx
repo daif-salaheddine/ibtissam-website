@@ -33,7 +33,7 @@ export default function About() {
       {/* Section label */}
       <div className="reveal-up flex items-center gap-4 mb-16">
         <span className="sec-num">01</span>
-        <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>
+        <span className="font-mono text-[0.8rem] tracking-[0.16em] uppercase" style={{ color: '#9A8E84' }}>
           Professional Identity
         </span>
       </div>
@@ -42,10 +42,10 @@ export default function About() {
       <div className="reveal-up delay-1 grid grid-cols-3 gap-6 md:gap-12 mb-20">
         {stats.map(({ value, suffix, label }) => (
           <div key={label} className="text-center md:text-left">
-            <div className="font-cormorant font-semibold leading-none" style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', color: '#C4973A' }}>
+            <div className="font-cormorant font-semibold leading-none" style={{ fontSize: 'clamp(3rem, 4.5vw, 4rem)', color: '#C4973A' }}>
               <Counter target={value} suffix={suffix} />
             </div>
-            <div className="mt-2 font-mono text-[0.58rem] tracking-[0.18em] uppercase" style={{ color: '#9A8E84' }}>
+            <div className="mt-2 font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: '#9A8E84' }}>
               {label}
             </div>
           </div>
@@ -57,8 +57,8 @@ export default function About() {
         {/* Quote */}
         <div className="reveal-up delay-2">
           <blockquote
-            className="font-cormorant italic font-light leading-[1.4]"
-            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', color: '#2A2218' }}
+            className="font-cormorant italic font-normal leading-[1.5]"
+            style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.5rem)', color: '#2A2218' }}
           >
             <span className="block w-8 h-[2px] mb-6" style={{ background: '#C4973A' }} aria-hidden="true" />
             {about.quote}
@@ -82,17 +82,17 @@ export default function About() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/638284572_18560172718003108_182237673993080230_n.jpg" alt="Ibtissam Daif — media appearance" className="w-full h-full object-cover object-top" />
             <div className="absolute bottom-0 left-0 right-0 px-3 py-2" style={{ background: 'linear-gradient(to top, rgba(42,34,24,0.55), transparent)' }}>
-              <span className="font-mono text-[0.5rem] tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Al Aoula · National TV</span>
+              <span className="font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Al Aoula · National TV</span>
             </div>
           </div>
         </div>
 
         {/* Bio */}
         <div className="reveal-up delay-4">
-          <p className="font-dm text-lg md:text-xl leading-[1.8] mb-8" style={{ color: '#5A5048' }}>
+          <p className="font-dm text-base md:text-lg leading-[1.7] mb-8 max-w-[680px]" style={{ color: '#5A5048' }}>
             {about.bioShort}
           </p>
-          <p className="font-dm text-base md:text-lg leading-[1.85]" style={{ color: '#9A8E84' }}>
+          <p className="font-dm text-base leading-[1.7] max-w-[680px]" style={{ color: '#9A8E84' }}>
             {about.bioLong.split('\n\n').map((para, i) => (
               <span key={i} className="block mb-4">{para}</span>
             ))}
@@ -103,7 +103,7 @@ export default function About() {
             {about.pillars.map(p => (
               <span
                 key={p}
-                className="font-mono text-[0.58rem] tracking-[0.15em] uppercase px-3 py-1.5"
+                className="font-mono text-[0.75rem] tracking-[0.1em] uppercase px-3 py-1.5"
                 style={{
                   color: '#8A6820',
                   border: '1px solid rgba(138,104,32,0.3)',

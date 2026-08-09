@@ -50,26 +50,26 @@ export default function Contact() {
       <div className="relative z-10 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto w-full">
         <div data-reveal className="flex items-center gap-4 mb-16">
           <span className="sec-num-light">08</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <span className="font-mono text-[0.8rem] tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
             Start a Conversation
           </span>
         </div>
 
-        <div data-reveal className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        <div data-reveal className="font-mono text-[0.8rem] tracking-[0.16em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
           {contact.eyebrow}
         </div>
 
         {/* Display name */}
         <div data-reveal className="mb-6">
-          <div className="font-cormorant font-light leading-[0.9] block" style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#FFFFFF' }}>
+          <div className="font-cormorant font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)', color: '#FFFFFF' }}>
             Ibtissam
           </div>
-          <div className="font-cormorant italic font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(4rem, 14vw, 13rem)', color: '#EDD9A3' }}>
+          <div className="font-cormorant italic font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)', color: '#EDD9A3' }}>
             Daif
           </div>
         </div>
 
-        <p data-reveal className="font-mono text-[0.65rem] tracking-[0.2em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        <p data-reveal className="font-mono text-[0.8rem] tracking-[0.14em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.5)' }}>
           {contact.creds}
         </p>
 
@@ -97,25 +97,25 @@ export default function Contact() {
           style={{ borderColor: 'rgba(255,255,255,0.12)' }}
         >
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Phone</div>
+            <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Phone</div>
             <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="font-dm text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.85)' }}>
               {contact.phone}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Email</div>
+            <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Email</div>
             <a href={`mailto:${contact.email}`} className="font-dm text-sm transition-colors duration-300 break-all" style={{ color: 'rgba(255,255,255,0.85)' }}>
               {contact.email}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>LinkedIn</div>
+            <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>LinkedIn</div>
             <a href={`https://${contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="font-dm text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.85)' }}>
               {contact.linkedin}
             </a>
           </div>
           <div>
-            <div className="font-mono text-[0.55rem] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Based Between</div>
+            <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Based Between</div>
             <span className="font-dm text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>{contact.location}</span>
           </div>
         </div>

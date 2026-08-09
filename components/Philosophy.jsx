@@ -43,19 +43,19 @@ export default function Philosophy() {
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">06</span>
         </div>
-        <h2 data-reveal className="font-cormorant font-light leading-tight mb-16 max-w-xl" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#2A2218' }}>
-          How I <em>think about learning</em>
+        <h2 data-reveal className="font-cormorant font-semibold leading-[1.2] mb-16 max-w-xl" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#2A2218' }}>
+          How I think about learning
         </h2>
 
         {/* Pull quote */}
-        <blockquote data-reveal className="font-cormorant italic font-light leading-relaxed mb-20 max-w-3xl" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', color: '#5A5048' }}>
+        <blockquote data-reveal className="font-cormorant italic font-normal leading-[1.5] mb-20 max-w-3xl" style={{ fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)', color: '#5A5048' }}>
           <span className="block w-6 h-[2px] mb-6" style={{ background: '#C4973A' }} aria-hidden />
           {philosophy.quote}
         </blockquote>
 
         {/* Methodology */}
         <div data-reveal className="mb-20">
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
+          <div className="font-mono text-[0.8rem] tracking-[0.16em] uppercase mb-8" style={{ color: '#9A8E84' }}>
             The Four-Stage Methodology
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(42,34,24,0.06)' }}>
@@ -68,7 +68,7 @@ export default function Philosophy() {
                   {step.step}
                 </h3>
                 <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#5A5048' }}>{step.preview}</p>
-                <p className="font-dm text-sm leading-relaxed" style={{ color: '#9A8E84' }}>{step.body}</p>
+                <p className="font-dm text-base leading-[1.65]" style={{ color: '#9A8E84' }}>{step.body}</p>
                 {i < 3 && (
                   <div className="hidden lg:flex justify-end items-center mt-4">
                     <span className="block w-4 h-[1px]" style={{ background: 'rgba(196,151,58,0.3)' }} aria-hidden />
@@ -81,7 +81,7 @@ export default function Philosophy() {
 
         {/* Beliefs */}
         <div>
-          <div className="font-mono text-[0.6rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
+          <div className="font-mono text-[0.8rem] tracking-[0.16em] uppercase mb-8" style={{ color: '#9A8E84' }}>
             Beliefs That Shape Every Engagement
           </div>
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
