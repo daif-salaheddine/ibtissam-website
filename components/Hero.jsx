@@ -113,7 +113,7 @@ export default function Hero() {
             className="font-mono text-[0.65rem] tracking-[0.2em] uppercase transition-colors duration-300"
             style={{ color: '#9A8E84' }}
           >
-            Get in Touch →
+            Get in Touch
           </a>
         </div>
       </div>

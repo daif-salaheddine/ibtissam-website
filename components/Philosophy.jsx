@@ -70,7 +70,9 @@ export default function Philosophy() {
                 <p className="font-dm text-base leading-relaxed mb-2" style={{ color: '#5A5048' }}>{step.preview}</p>
                 <p className="font-dm text-sm leading-relaxed" style={{ color: '#9A8E84' }}>{step.body}</p>
                 {i < 3 && (
-                  <div className="hidden lg:flex justify-end items-center mt-4" style={{ color: 'rgba(196,151,58,0.35)' }} aria-hidden>→</div>
+                  <div className="hidden lg:flex justify-end items-center mt-4">
+                    <span className="block w-4 h-[1px]" style={{ background: 'rgba(196,151,58,0.3)' }} aria-hidden />
+                  </div>
                 )}
               </div>
             ))}

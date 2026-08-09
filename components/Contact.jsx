@@ -87,7 +87,6 @@ export default function Contact() {
             className="btn-outline-light group"
           >
             Start a conversation
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </MagneticButton>
         </div>
 

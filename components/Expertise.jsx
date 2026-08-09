@@ -157,7 +157,7 @@ function PillarCard({ pillar, index, mobile = false }) {
                 className="flex items-start gap-3 font-dm text-sm md:text-base leading-relaxed"
                 style={{ color: i < pillar.preview.length ? '#FFFFFF' : 'rgba(255,255,255,0.7)' }}
               >
-                <span style={{ color: 'rgba(255,255,255,0.6)', marginTop: 2, flexShrink: 0 }}>→</span>
+                <span style={{ color: 'rgba(255,255,255,0.4)', marginTop: 6, flexShrink: 0, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255,255,255,0.4)', display: 'inline-block' }} />
                 {item}
               </li>
             ))}

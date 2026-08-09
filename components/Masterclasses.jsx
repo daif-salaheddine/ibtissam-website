@@ -51,7 +51,7 @@ export default function Masterclasses() {
           {masterclasses.map((mc, i) => (
             <div key={i} data-reveal className="p-10 md:p-14 flex flex-col" style={{ background: '#FFFFFF' }}>
               <div className="font-mono text-[0.55rem] tracking-[0.22em] uppercase mb-6" style={{ color: '#5C7A68' }}>
-                {mc.num} — {mc.tag}
+                {mc.num} · {mc.tag}
               </div>
 
               <h3 className="font-cormorant font-semibold leading-tight mb-6" style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', color: '#2A2218' }}>
