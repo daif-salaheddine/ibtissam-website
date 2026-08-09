@@ -84,7 +84,7 @@ export default function Philosophy() {
           <div className="font-mono text-[0.8rem] tracking-[0.16em] uppercase mb-8" style={{ color: '#9A8E84' }}>
             Beliefs That Shape Every Engagement
           </div>
-          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-6">
             {philosophy.beliefs.map((belief, i) => (
               <div
                 key={i}

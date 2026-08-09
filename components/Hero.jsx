@@ -48,73 +48,77 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: '#FFFFFF' }}
     >
-      {/* Content */}
       <div
-        className="relative z-10 w-full px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto flex flex-col items-start"
+        className="relative z-10 w-full px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto"
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s' }}
       >
-        {/* Eyebrow */}
-        <p className="font-mono text-[0.8rem] tracking-[0.25em] uppercase mb-8" style={{ color: '#9A8E84' }}>
+        {/* Eyebrow — full width */}
+        <p className="font-mono text-[0.8rem] tracking-[0.25em] uppercase mb-10" style={{ color: '#9A8E84' }}>
           {hero.eyebrow}
         </p>
 
-        {/* Name */}
-        <h1
-          className="font-cormorant font-semibold leading-[0.88] select-none"
-          style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
-          aria-label={`${hero.firstName} ${hero.lastName}`}
-        >
-          <div ref={firstRef} className="overflow-hidden">
-            {NAME_FIRST.split('').map((ch, i) => (
-              <span key={i} className="inline-block" style={{ color: '#2A2218' }}>{ch}</span>
-            ))}
+        {/* Two-column layout: name left, content right */}
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-20 items-end">
+
+          {/* Left: name + role carousel */}
+          <div>
+            <h1
+              className="font-cormorant font-semibold leading-[0.88] select-none"
+              style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
+              aria-label={`${hero.firstName} ${hero.lastName}`}
+            >
+              <div ref={firstRef} className="overflow-hidden">
+                {NAME_FIRST.split('').map((ch, i) => (
+                  <span key={i} className="inline-block" style={{ color: '#2A2218' }}>{ch}</span>
+                ))}
+              </div>
+              <div ref={lastRef} className="overflow-hidden">
+                {NAME_LAST.split('').map((ch, i) => (
+                  <span key={i} className="inline-block" style={{ color: '#C4973A' }}>{ch}</span>
+                ))}
+              </div>
+            </h1>
+
+            <div className="mt-8 h-8 overflow-hidden relative" aria-live="polite" aria-atomic="true">
+              <div
+                className="flex flex-col transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ transform: `translateY(${-roleIdx * 32}px)` }}
+              >
+                {hero.roles.map((role, i) => (
+                  <span key={i} className="font-cormorant font-normal text-xl md:text-2xl h-8 flex items-center" style={{ color: '#5A5048' }}>
+                    {role}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <div ref={lastRef} className="overflow-hidden">
-            {NAME_LAST.split('').map((ch, i) => (
-              <span key={i} className="inline-block" style={{ color: '#C4973A' }}>{ch}</span>
-            ))}
+
+          {/* Right: tagline, location, CTA */}
+          <div className="flex flex-col justify-end lg:pb-2">
+            <p className="font-dm text-base md:text-lg leading-[1.7] mb-4" style={{ color: '#5A5048' }}>
+              {hero.tagline}
+            </p>
+
+            <p className="font-mono text-[0.8rem] tracking-[0.2em] uppercase mb-10" style={{ color: '#9A8E84' }}>
+              {hero.location}
+            </p>
+
+            <div className="flex items-center gap-6">
+              <MagneticButton onClick={scrollDown} className="btn-outline">
+                View Work
+              </MagneticButton>
+              <a
+                href="mailto:ibtissamdaif02@gmail.com"
+                className="font-mono text-[0.8rem] tracking-[0.15em] uppercase transition-colors duration-300"
+                style={{ color: '#9A8E84' }}
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
-        </h1>
-
-        {/* Role carousel */}
-        <div className="mt-8 h-8 overflow-hidden relative" aria-live="polite" aria-atomic="true">
-          <div
-            className="flex flex-col transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            style={{ transform: `translateY(${-roleIdx * 32}px)` }}
-          >
-            {hero.roles.map((role, i) => (
-              <span key={i} className="font-cormorant font-normal text-xl md:text-2xl h-8 flex items-center" style={{ color: '#5A5048' }}>
-                {role}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Tagline */}
-        <p className="mt-6 font-dm text-base md:text-lg max-w-[640px] leading-[1.7]" style={{ color: '#5A5048' }}>
-          {hero.tagline}
-        </p>
-
-        {/* Location */}
-        <p className="mt-3 font-mono text-[0.8rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>
-          {hero.location}
-        </p>
-
-        {/* CTA */}
-        <div className="mt-12 flex items-center gap-6 self-start">
-          <MagneticButton onClick={scrollDown} className="btn-outline">
-            View Work
-          </MagneticButton>
-          <a
-            href="mailto:ibtissamdaif02@gmail.com"
-            className="font-mono text-[0.8rem] tracking-[0.15em] uppercase transition-colors duration-300"
-            style={{ color: '#9A8E84' }}
-          >
-            Get in Touch
-          </a>
         </div>
       </div>
 
