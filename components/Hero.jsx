@@ -49,14 +49,21 @@ export default function Hero() {
       id="hero"
       ref={containerRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: '#FFFFFF' }}
+      style={{
+        backgroundImage: 'url(/1770130174921.jfif)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 z-0" style={{ background: 'linear-gradient(135deg, rgba(20,15,10,0.72) 0%, rgba(20,15,10,0.55) 50%, rgba(20,15,10,0.65) 100%)' }} />
       <div
         className="relative z-10 w-full px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto"
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s' }}
       >
         {/* Eyebrow — full width */}
-        <p className="font-mono text-[0.8rem] tracking-[0.25em] uppercase mb-10" style={{ color: '#9A8E84' }}>
+        <p className="font-mono text-[0.8rem] tracking-[0.25em] uppercase mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
           {hero.eyebrow}
         </p>
 
@@ -72,7 +79,7 @@ export default function Hero() {
             >
               <div ref={firstRef} className="overflow-hidden">
                 {NAME_FIRST.split('').map((ch, i) => (
-                  <span key={i} className="inline-block" style={{ color: '#2A2218' }}>{ch}</span>
+                  <span key={i} className="inline-block" style={{ color: '#FFFFFF' }}>{ch}</span>
                 ))}
               </div>
               <div ref={lastRef} className="overflow-hidden">
@@ -88,7 +95,7 @@ export default function Hero() {
                 style={{ transform: `translateY(${-roleIdx * 32}px)` }}
               >
                 {hero.roles.map((role, i) => (
-                  <span key={i} className="font-cormorant font-normal text-xl md:text-2xl h-8 flex items-center" style={{ color: '#5A5048' }}>
+                  <span key={i} className="font-cormorant font-normal text-xl md:text-2xl h-8 flex items-center" style={{ color: 'rgba(255,255,255,0.75)' }}>
                     {role}
                   </span>
                 ))}
@@ -98,22 +105,22 @@ export default function Hero() {
 
           {/* Right: tagline, location, CTA */}
           <div className="flex flex-col justify-end lg:pb-2">
-            <p className="font-dm text-base md:text-lg leading-[1.7] mb-4" style={{ color: '#5A5048' }}>
+            <p className="font-dm text-base md:text-lg leading-[1.7] mb-4" style={{ color: 'rgba(255,255,255,0.82)' }}>
               {hero.tagline}
             </p>
 
-            <p className="font-mono text-[0.8rem] tracking-[0.2em] uppercase mb-10" style={{ color: '#9A8E84' }}>
+            <p className="font-mono text-[0.8rem] tracking-[0.2em] uppercase mb-10" style={{ color: 'rgba(255,255,255,0.5)' }}>
               {hero.location}
             </p>
 
             <div className="flex items-center gap-6">
-              <MagneticButton onClick={scrollDown} className="btn-outline">
+              <MagneticButton onClick={scrollDown} className="btn-outline-light">
                 View Work
               </MagneticButton>
               <a
                 href="mailto:ibtissamdaif02@gmail.com"
                 className="font-mono text-[0.8rem] tracking-[0.15em] uppercase transition-colors duration-300"
-                style={{ color: '#9A8E84' }}
+                style={{ color: 'rgba(255,255,255,0.6)' }}
               >
                 Get in Touch
               </a>
@@ -130,7 +137,7 @@ export default function Hero() {
         style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.6s 1.2s' }}
       >
         <div className="w-[1px] h-12 origin-top animate-blink" style={{ background: 'rgba(196,151,58,0.5)' }} />
-        <span className="font-mono text-[0.75rem] tracking-[0.2em] uppercase" style={{ color: '#9A8E84' }}>Scroll</span>
+        <span className="font-mono text-[0.75rem] tracking-[0.2em] uppercase" style={{ color: 'rgba(255,255,255,0.5)' }}>Scroll</span>
       </button>
     </section>
   )
