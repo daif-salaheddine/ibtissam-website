@@ -52,10 +52,10 @@ export default function Navbar() {
         <a
           href="#hero"
           onClick={e => scrollTo(e, '#hero')}
-          className="font-cormorant text-xl tracking-wide"
-          style={{ color: '#2A2218', fontWeight: 400 }}
+          className="font-cormorant text-xl tracking-wide transition-colors duration-500"
+          style={{ color: scrolled ? '#2A2218' : '#FFFFFF', fontWeight: 400 }}
         >
-          Ibtissam<span style={{ color: '#C4973A' }}>.</span>
+          Ibtissam <span style={{ color: '#C4973A' }}>Daif</span>
         </a>
 
         {/* Links */}
@@ -66,7 +66,7 @@ export default function Navbar() {
               href={href}
               onClick={e => scrollTo(e, href)}
               className="font-mono text-[0.8rem] tracking-[0.16em] uppercase transition-colors duration-300"
-              style={{ color: active === href ? '#C4973A' : '#9A8E84' }}
+              style={{ color: active === href ? '#C4973A' : scrolled ? '#9A8E84' : 'rgba(255,255,255,0.7)' }}
             >
               {label}
             </a>
@@ -77,10 +77,10 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={e => scrollTo(e, '#contact')}
-          className="hidden md:inline-flex items-center font-mono text-[0.8rem] font-medium tracking-[0.15em] uppercase px-5 py-2.5 transition-all duration-300 hover:bg-[#2A2218] hover:text-white"
+          className="hidden md:inline-flex items-center font-mono text-[0.8rem] font-medium tracking-[0.15em] uppercase px-5 py-2.5 transition-all duration-300"
           style={{
-            border: '1px solid rgba(42,34,24,0.3)',
-            color: '#2A2218',
+            border: scrolled ? '1px solid rgba(42,34,24,0.3)' : '1px solid rgba(255,255,255,0.5)',
+            color: scrolled ? '#2A2218' : '#FFFFFF',
           }}
         >
           Contact
