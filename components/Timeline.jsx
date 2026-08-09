@@ -149,7 +149,7 @@ function EntryContent({ item, align }) {
       {item.photo && (
         <div className="mt-5 overflow-hidden" style={{ border: '1px solid rgba(42,34,24,0.08)' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={item.photo} alt={`${item.org} — ${item.role}`} className="w-full object-cover" style={{ maxHeight: '260px', filter: 'grayscale(10%)' }} />
+          <img src={item.photo} alt={`${item.org} — ${item.role}`} className="w-full block" style={{ filter: 'grayscale(10%)' }} />
         </div>
       )}
     </div>

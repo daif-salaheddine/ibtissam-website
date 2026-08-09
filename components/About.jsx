@@ -69,18 +69,17 @@ export default function About() {
         <div className="reveal-up delay-3 hidden md:flex flex-col gap-3">
           <div
             className="relative overflow-hidden"
-            style={{ aspectRatio: '3/4', background: '#EDE3D4', border: '1px solid rgba(42,34,24,0.08)' }}
+            style={{ background: '#EDE3D4', border: '1px solid rgba(42,34,24,0.08)' }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/10.jfif" alt="Ibtissam Daif" className="w-full h-full object-cover" style={{ filter: 'grayscale(8%)' }} />
-            <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(42,34,24,0.12) 0%, transparent 50%)' }} />
+            <img src="/10.jfif" alt="Ibtissam Daif" className="w-full block" style={{ filter: 'grayscale(8%)' }} />
           </div>
           <div
             className="relative overflow-hidden"
-            style={{ aspectRatio: '4/3', background: '#EDE3D4', border: '1px solid rgba(42,34,24,0.08)' }}
+            style={{ background: '#EDE3D4', border: '1px solid rgba(42,34,24,0.08)' }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/638284572_18560172718003108_182237673993080230_n.jpg" alt="Ibtissam Daif — media appearance" className="w-full h-full object-cover object-top" />
+            <img src="/638284572_18560172718003108_182237673993080230_n.jpg" alt="Ibtissam Daif — media appearance" className="w-full block" />
             <div className="absolute bottom-0 left-0 right-0 px-3 py-2" style={{ background: 'linear-gradient(to top, rgba(42,34,24,0.55), transparent)' }}>
               <span className="font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: 'rgba(255,255,255,0.8)' }}>Al Aoula · National TV</span>
             </div>
