@@ -1,13 +1,27 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const NAME = 'IBTISSAM DAIF'
-const TOTAL_DURATION = 2400
+const WORDS = ['Educate', 'Develop', 'Inspire', 'Transform']
+const TOTAL_DURATION = 2700
 
 export default function Loader({ onComplete }) {
   const [count, setCount] = useState(0)
+  const [wordIndex, setWordIndex] = useState(0)
+  const [labelVisible, setLabelVisible] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setLabelVisible(true), 80)
+    return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex(i => (i + 1) % WORDS.length)
+    }, 900)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const start = performance.now()
@@ -23,7 +37,7 @@ export default function Loader({ onComplete }) {
         requestAnimationFrame(tick)
       } else {
         setCount(100)
-        setTimeout(onComplete, 180)
+        setTimeout(onComplete, 400)
       }
     }
     const raf = requestAnimationFrame(tick)
@@ -35,49 +49,65 @@ export default function Loader({ onComplete }) {
       key="loader"
       initial={{ opacity: 1 }}
       exit={{ y: '-100%', transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } }}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none"
-      style={{ background: '#000000' }}
+      className="fixed inset-0 z-[9999] flex flex-col select-none overflow-hidden"
+      style={{ background: 'hsl(var(--bg))' }}
     >
-      <div
-        className="font-pixel text-[12vw] md:text-[8vw] leading-none tabular-nums"
-        style={{ color: '#FFFFFF' }}
-      >
-        {String(count).padStart(2, '0')}
-      </div>
-
-      <div
-        className="mt-6 font-cormorant tracking-[0.18em] text-[5vw] md:text-[3vw] uppercase"
-        style={{ color: '#FFFFFF' }}
-        aria-label={NAME}
-      >
-        {NAME.split('').map((char, i) => {
-          const threshold = char === ' ' ? 40 : Math.floor((i / NAME.length) * 85) + 10
-          return (
-            <span
-              key={i}
-              className="inline-block transition-opacity duration-500"
-              style={{ opacity: count >= threshold ? 1 : 0, transitionDelay: `${i * 20}ms` }}
-            >
-              {char === ' ' ? ' ' : char}
-            </span>
-          )
-        })}
-      </div>
-
-      <div
-        className="absolute bottom-10 font-pixel text-[0.6rem] tracking-widest uppercase"
-        style={{ color: 'rgba(255,255,255,0.35)' }}
-      >
-        Education &amp; Workforce Development Consultant
-      </div>
-
+      {/* Top-left: Portfolio label */}
       <motion.div
-        className="absolute bottom-0 left-0 h-[2px]"
-        style={{ background: '#C4973A' }}
-        initial={{ width: '0%' }}
-        animate={{ width: `${count}%` }}
-        transition={{ duration: 0.05 }}
-      />
+        className="absolute top-6 left-6 md:top-8 md:left-10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+      >
+        <span
+          className="text-xs uppercase tracking-[0.3em]"
+          style={{ color: 'hsl(var(--muted))' }}
+        >
+          Portfolio
+        </span>
+      </motion.div>
+
+      {/* Center: cycling words */}
+      <div className="flex-1 flex items-center justify-center">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={wordIndex}
+            className="font-display italic text-5xl md:text-7xl lg:text-8xl"
+            style={{ color: 'hsl(var(--text) / 0.8)' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+          >
+            {WORDS[wordIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+
+      {/* Bottom-right: counter */}
+      <div className="absolute bottom-8 right-6 md:bottom-12 md:right-10">
+        <span
+          className="font-display text-7xl md:text-9xl tabular-nums"
+          style={{ color: 'hsl(var(--text))' }}
+        >
+          {String(count).padStart(3, '0')}
+        </span>
+      </div>
+
+      {/* Bottom progress bar */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[3px]"
+        style={{ background: 'hsl(var(--stroke) / 0.5)' }}
+      >
+        <div
+          className="h-full accent-gradient origin-left"
+          style={{
+            transform: `scaleX(${count / 100})`,
+            transition: 'transform 0.05s linear',
+            boxShadow: '0 0 8px rgba(137, 170, 204, 0.35)',
+          }}
+        />
+      </div>
     </motion.div>
   )
 }

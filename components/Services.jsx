@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef, useEffect } from 'react'
 import { services } from '@/lib/data'
@@ -37,7 +37,10 @@ export default function Services() {
       id="services"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: '#111009', borderTop: '1px solid rgba(242,235,224,0.07)' }}
+      style={{
+        background: 'hsl(var(--surface))',
+        borderTop: '1px solid hsl(var(--stroke))',
+      }}
     >
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 max-w-[1800px] mx-auto">
         {/* Header */}
@@ -46,20 +49,27 @@ export default function Services() {
         </div>
         <div className="mb-14 md:flex md:justify-between md:items-end gap-12">
           <h2
-            className="font-cormorant font-light leading-tight"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: '#F2EBE0' }}
+            className="font-display font-light leading-tight"
+            style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)', color: 'hsl(var(--text))' }}
           >
-            What I can do <em>for your organization</em>
+            What I can do{' '}
+            <em className="font-display italic">for your organization</em>
           </h2>
-          <p className="mt-4 md:mt-0 font-dm text-base leading-relaxed max-w-md" style={{ color: '#9E908A' }}>
+          <p
+            className="mt-4 md:mt-0 font-body text-base leading-relaxed max-w-md"
+            style={{ color: 'hsl(var(--muted))' }}
+          >
             Eight areas. Each engagement designed from scratch for the client. Delivered in English, French, and Arabic.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(242,235,224,0.07)' }}>
+        <div
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px"
+          style={{ background: 'hsl(var(--stroke))' }}
+        >
           {services.map((svc, i) => (
-            <ServiceCard key={i} svc={svc} index={i} />
+            <ServiceCard key={i} svc={svc} />
           ))}
         </div>
       </div>
@@ -67,45 +77,58 @@ export default function Services() {
   )
 }
 
-function ServiceCard({ svc, index }) {
+function ServiceCard({ svc }) {
   const [open, setOpen] = useState(false)
+  const [hover, setHover] = useState(false)
 
   return (
     <div
       data-reveal
       className="group p-6 flex flex-col transition-all duration-500 hover:z-10"
       style={{
-        background: '#111009',
+        background: hover ? 'hsl(var(--bg))' : 'hsl(var(--surface))',
         minHeight: 240,
       }}
-      onMouseEnter={e => e.currentTarget.style.background = '#1A1714'}
-      onMouseLeave={e => e.currentTarget.style.background = '#111009'}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <div className="flex items-start justify-between mb-4">
-        <span className="font-pixel text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
+        <span
+          className="font-body text-[0.55rem] tracking-[0.2em] uppercase"
+          style={{ color: 'hsl(var(--muted))' }}
+        >
           {svc.num}
         </span>
-        <span className="font-pixel text-[0.5rem] tracking-[0.15em] uppercase" style={{ color: '#E8A020' }}>
+        <span
+          className="font-body text-[0.5rem] tracking-[0.15em] uppercase accent-text"
+        >
           {svc.cat}
         </span>
       </div>
 
       <h3
-        className="font-cormorant font-semibold text-xl mb-3 leading-tight group-hover:text-amber transition-colors duration-300"
-        style={{ color: '#F2EBE0' }}
+        className="font-display italic font-semibold text-xl mb-3 leading-tight transition-colors duration-300"
+        style={{ color: 'hsl(var(--text))' }}
       >
         {svc.title}
       </h3>
 
-      <p className="font-dm text-sm leading-relaxed mb-4 flex-1" style={{ color: '#9E908A' }}>
+      <p
+        className="font-body text-sm leading-relaxed mb-4 flex-1"
+        style={{ color: 'hsl(var(--muted))' }}
+      >
         {svc.lead}
       </p>
 
       {open && (
         <ul className="mb-4 space-y-1.5">
           {svc.items.map(item => (
-            <li key={item} className="flex items-start gap-2 font-dm text-xs leading-relaxed" style={{ color: '#BDB0A5' }}>
-              <span style={{ color: '#E8A020', marginTop: 1, flexShrink: 0 }}>→</span>
+            <li
+              key={item}
+              className="flex items-start gap-2 font-body text-xs leading-relaxed"
+              style={{ color: 'hsl(var(--text) / 0.75)' }}
+            >
+              <span className="accent-text mt-0.5 flex-shrink-0">→</span>
               {item}
             </li>
           ))}
@@ -114,8 +137,8 @@ function ServiceCard({ svc, index }) {
 
       <button
         onClick={() => setOpen(o => !o)}
-        className="font-pixel text-[0.55rem] tracking-[0.18em] uppercase mt-auto self-start transition-colors duration-300 hover:text-amber"
-        style={{ color: '#9E908A' }}
+        className="font-body text-[0.55rem] tracking-[0.18em] uppercase mt-auto self-start transition-colors duration-300"
+        style={{ color: hover ? 'hsl(var(--text))' : 'hsl(var(--muted))' }}
       >
         {open ? 'Less ↑' : 'Details ↓'}
       </button>

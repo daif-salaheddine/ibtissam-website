@@ -34,7 +34,7 @@ export default function Testimonials() {
       id="testimonials"
       ref={sectionRef}
       className="py-28 md:py-36 relative overflow-hidden"
-      style={{ background: '#080706' }}
+      style={{ background: 'hsl(var(--surface))' }}
     >
       <div className="relative z-10 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
@@ -42,10 +42,11 @@ export default function Testimonials() {
         </div>
         <h2
           data-reveal
-          className="font-cormorant font-semibold leading-[1.2] mb-16"
-          style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#FFFFFF' }}
+          className="font-display font-semibold leading-[1.2] mb-16"
+          style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'hsl(var(--text))' }}
         >
-          In their own words
+          In their{' '}
+          <em className="font-display italic font-normal">own words</em>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10 md:gap-16">
@@ -54,22 +55,28 @@ export default function Testimonials() {
               key={i}
               data-reveal
               className="border-t pt-8"
-              style={{ borderColor: 'rgba(255,255,255,0.1)' }}
+              style={{ borderColor: 'hsl(var(--stroke))' }}
             >
               <blockquote
-                className="font-cormorant italic font-normal leading-[1.55] mb-8"
+                className="font-display italic font-normal leading-[1.55] mb-8"
                 style={{
                   fontSize: 'clamp(1.1rem, 1.4vw, 1.35rem)',
-                  color: 'rgba(255,255,255,0.85)',
+                  color: 'hsl(var(--text) / 0.85)',
                 }}
               >
                 {t.quote}
               </blockquote>
               <div>
-                <div className="font-dm text-sm font-medium" style={{ color: '#FFFFFF' }}>
+                <div
+                  className="font-body text-sm font-medium"
+                  style={{ color: 'hsl(var(--text))' }}
+                >
                   {t.name}
                 </div>
-                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                <div
+                  className="font-body text-[0.68rem] tracking-widest uppercase mt-1"
+                  style={{ color: 'hsl(var(--muted))' }}
+                >
                   {t.title}, {t.org}
                 </div>
               </div>

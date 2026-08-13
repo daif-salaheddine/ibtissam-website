@@ -3,9 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { expertise } from '@/lib/data'
 
-// Section background: deep golden-mustard (like Kelsey's "How we work together")
-const BG = '#8A7020'
-
 export default function Expertise() {
   const containerRef = useRef(null)
   const [active, setActive] = useState(0)
@@ -58,13 +55,16 @@ export default function Expertise() {
       id="expertise"
       ref={containerRef}
       className="min-h-screen overflow-hidden"
-      style={{ background: BG }}
+      style={{ background: 'hsl(var(--bg))' }}
     >
       <div className="relative w-full min-h-screen flex flex-col lg:block">
         {/* Section label */}
         <div className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4">
-          <span className="sec-num-light">02</span>
-          <span className="font-pixel text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <span className="sec-num">02</span>
+          <span
+            className="font-body text-[0.6rem] tracking-[0.2em] uppercase hidden md:block"
+            style={{ color: 'hsl(var(--muted))' }}
+          >
             Three Pillars, Integrated by Design
           </span>
         </div>
@@ -83,7 +83,7 @@ export default function Expertise() {
               key={i}
               ref={el => panelRefs.current[i] = el}
               className="absolute inset-0 will-change-transform"
-              style={{ background: BG }}
+              style={{ background: 'hsl(var(--bg))' }}
             >
               <PillarCard pillar={pillar} index={i} />
             </div>
@@ -102,8 +102,8 @@ function PillarCard({ pillar, index, mobile = false }) {
         <div className="relative">
           {/* Watermark */}
           <div
-            className="absolute -top-8 -left-4 font-cormorant font-light leading-none pointer-events-none select-none"
-            style={{ fontSize: 'clamp(8rem, 20vw, 18rem)', color: 'rgba(255,255,255,0.06)', lineHeight: 1 }}
+            className="absolute -top-8 -left-4 font-display font-light leading-none pointer-events-none select-none"
+            style={{ fontSize: 'clamp(8rem, 20vw, 18rem)', color: 'hsl(var(--stroke))', lineHeight: 1 }}
             aria-hidden="true"
           >
             {pillar.roman}
@@ -115,8 +115,12 @@ function PillarCard({ pillar, index, mobile = false }) {
               {pillar.tags.map(tag => (
                 <span
                   key={tag}
-                  className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase px-2.5 py-1"
-                  style={{ color: 'rgba(255,255,255,0.8)', border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.08)' }}
+                  className="font-body text-[0.75rem] tracking-[0.12em] uppercase px-2.5 py-1"
+                  style={{
+                    color: 'hsl(var(--text) / 0.8)',
+                    border: '1px solid hsl(var(--stroke))',
+                    background: 'hsl(var(--surface))',
+                  }}
                 >
                   {tag}
                 </span>
@@ -124,21 +128,36 @@ function PillarCard({ pillar, index, mobile = false }) {
             </div>
 
             <h2
-              className="font-cormorant font-semibold leading-tight mb-2"
-              style={{ fontSize: 'clamp(1.75rem, 2.8vw, 2.5rem)', color: '#FFFFFF' }}
+              className="font-display italic font-semibold leading-tight mb-2"
+              style={{ fontSize: 'clamp(1.75rem, 2.8vw, 2.5rem)', color: 'hsl(var(--text))' }}
             >
               {pillar.title}
             </h2>
-            <div className="font-pixel text-[0.8rem] tracking-[0.15em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <div
+              className="font-body text-[0.8rem] tracking-[0.15em] uppercase mb-8"
+              style={{ color: 'hsl(var(--muted))' }}
+            >
               {pillar.sub}
             </div>
 
             {/* Outcome */}
-            <div className="p-5 border-l-2" style={{ borderColor: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.08)' }}>
-              <div className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase mb-1.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            <div
+              className="p-5 border-l-2"
+              style={{
+                borderColor: '#89AACC',
+                background: 'rgba(137,170,204,0.05)',
+              }}
+            >
+              <div
+                className="font-body text-[0.75rem] tracking-[0.12em] uppercase mb-1.5"
+                style={{ color: 'hsl(var(--muted))' }}
+              >
                 Outcome
               </div>
-              <p className="font-dm text-base leading-[1.65]" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p
+                className="font-body text-base leading-[1.65]"
+                style={{ color: 'hsl(var(--text) / 0.85)' }}
+              >
                 {pillar.outcome.text}
               </p>
             </div>
@@ -147,17 +166,30 @@ function PillarCard({ pillar, index, mobile = false }) {
 
         {/* Right */}
         <div>
-          <div className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <div
+            className="font-body text-[0.75rem] tracking-[0.12em] uppercase mb-6"
+            style={{ color: 'hsl(var(--muted))' }}
+          >
             Core Capabilities
           </div>
           <ul className="space-y-3">
             {[...pillar.preview, ...pillar.full].map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 font-dm text-sm md:text-base leading-relaxed"
-                style={{ color: i < pillar.preview.length ? '#FFFFFF' : 'rgba(255,255,255,0.7)' }}
+                className="flex items-start gap-3 font-body text-sm md:text-base leading-relaxed"
+                style={{ color: i < pillar.preview.length ? 'hsl(var(--text))' : 'hsl(var(--muted))' }}
               >
-                <span style={{ color: 'rgba(255,255,255,0.4)', marginTop: 6, flexShrink: 0, width: 4, height: 4, borderRadius: '50%', background: 'rgba(255,255,255,0.4)', display: 'inline-block' }} />
+                <span
+                  style={{
+                    marginTop: 6,
+                    flexShrink: 0,
+                    width: 4,
+                    height: 4,
+                    borderRadius: '50%',
+                    background: i < pillar.preview.length ? '#89AACC' : 'hsl(var(--stroke))',
+                    display: 'inline-block',
+                  }}
+                />
                 {item}
               </li>
             ))}
