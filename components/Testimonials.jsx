@@ -34,36 +34,11 @@ export default function Testimonials() {
       id="testimonials"
       ref={sectionRef}
       className="py-28 md:py-36 relative overflow-hidden"
-      style={{ background: '#5A7060' }}
+      style={{ background: '#080706' }}
     >
-      {/* Kelsey-style wavy decorative lines */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        preserveAspectRatio="xMidYMid slice"
-        style={{ opacity: 0.12 }}
-        aria-hidden="true"
-      >
-        <path
-          d="M-100,120 Q150,60 400,120 T900,120 T1400,120 T1900,120"
-          fill="none" stroke="white" strokeWidth="1.5"
-        />
-        <path
-          d="M-100,200 Q150,140 400,200 T900,200 T1400,200 T1900,200"
-          fill="none" stroke="white" strokeWidth="1"
-        />
-        <path
-          d="M-100,320 Q200,260 500,320 T1000,300 T1500,320 T1900,300"
-          fill="none" stroke="white" strokeWidth="1"
-        />
-        <path
-          d="M-100,460 Q250,400 550,460 T1050,440 T1550,460 T1900,440"
-          fill="none" stroke="white" strokeWidth="1.5"
-        />
-      </svg>
-
       <div className="relative z-10 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
-          <span className="sec-num-light">04</span>
+          <span className="sec-num">04</span>
         </div>
         <h2
           data-reveal
@@ -79,13 +54,13 @@ export default function Testimonials() {
               key={i}
               data-reveal
               className="border-t pt-8"
-              style={{ borderColor: 'rgba(255,255,255,0.25)' }}
+              style={{ borderColor: 'rgba(255,255,255,0.1)' }}
             >
               <blockquote
                 className="font-cormorant italic font-normal leading-[1.55] mb-8"
                 style={{
                   fontSize: 'clamp(1.1rem, 1.4vw, 1.35rem)',
-                  color: 'rgba(255,255,255,0.95)',
+                  color: 'rgba(255,255,255,0.85)',
                 }}
               >
                 {t.quote}
@@ -94,14 +69,13 @@ export default function Testimonials() {
                 <div className="font-dm text-sm font-medium" style={{ color: '#FFFFFF' }}>
                   {t.name}
                 </div>
-                <div className="font-mono text-[0.75rem] tracking-[0.1em] uppercase mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
                   {t.title}, {t.org}
                 </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

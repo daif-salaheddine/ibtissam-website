@@ -36,18 +36,18 @@ export default function Loader({ onComplete }) {
       initial={{ opacity: 1 }}
       exit={{ y: '-100%', transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } }}
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none"
-      style={{ background: '#F5EDE0' }}
+      style={{ background: '#000000' }}
     >
       <div
-        className="font-mono text-[12vw] md:text-[8vw] leading-none tabular-nums"
-        style={{ color: '#2A2218' }}
+        className="font-pixel text-[12vw] md:text-[8vw] leading-none tabular-nums"
+        style={{ color: '#FFFFFF' }}
       >
         {String(count).padStart(2, '0')}
       </div>
 
       <div
         className="mt-6 font-cormorant tracking-[0.18em] text-[5vw] md:text-[3vw] uppercase"
-        style={{ color: '#2A2218' }}
+        style={{ color: '#FFFFFF' }}
         aria-label={NAME}
       >
         {NAME.split('').map((char, i) => {
@@ -65,8 +65,8 @@ export default function Loader({ onComplete }) {
       </div>
 
       <div
-        className="absolute bottom-10 font-mono text-[0.6rem] tracking-[0.3em] uppercase"
-        style={{ color: '#9A8E84' }}
+        className="absolute bottom-10 font-pixel text-[0.6rem] tracking-widest uppercase"
+        style={{ color: 'rgba(255,255,255,0.35)' }}
       >
         Education &amp; Workforce Development Consultant
       </div>

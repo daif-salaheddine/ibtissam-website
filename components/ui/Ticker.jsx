@@ -8,13 +8,13 @@ export default function Ticker({ items, speed = 'normal', className = '' }) {
       <div className={`inline-flex ${speed === 'fast' ? 'animate-ticker-fast' : 'animate-ticker'}`}>
         {doubled.map((item, i) => (
           <span key={i} className="inline-flex items-baseline gap-3 mx-8">
-            <span className="font-cormorant text-xl md:text-2xl font-light" style={{ color: '#2A2218' }}>
+            <span className="font-cormorant text-xl md:text-2xl font-light" style={{ color: 'rgba(255,255,255,0.85)' }}>
               {item.name}
             </span>
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase" style={{ color: '#8A6820' }}>
+            <span className="font-pixel text-[0.55rem] tracking-widest uppercase" style={{ color: 'rgba(196,151,58,0.7)' }}>
               {item.category}
             </span>
-            <span style={{ color: '#9A8E84', marginLeft: 24 }}>·</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)', marginLeft: 24 }}>·</span>
           </span>
         ))}
       </div>

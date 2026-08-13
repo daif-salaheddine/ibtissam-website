@@ -14,8 +14,8 @@
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #2A2218;
+    background-color: #000000;
+    color: #FFFFFF;
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -42,18 +42,22 @@
 }
 
 @layer utilities {
+  .font-pixel {
+    font-family: 'basis33', monospace;
+  }
+
   .sec-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'basis33', monospace;
     font-size: 0.8rem;
     letter-spacing: 0.22em;
-    color: #9A8E84;
+    color: rgba(255,255,255,0.4);
   }
 
   .sec-num-light {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'basis33', monospace;
     font-size: 0.8rem;
     letter-spacing: 0.22em;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.4);
   }
 
   .amber-line {
@@ -87,41 +91,33 @@
   .delay-5 { transition-delay: 0.5s; }
   .delay-6 { transition-delay: 0.6s; }
 
-  .text-gradient-amber {
-    background: linear-gradient(135deg, #C4973A 0%, #E0B84A 50%, #C4973A 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .border-hairline {
-    border-color: rgba(42, 34, 24, 0.1);
+    border-color: rgba(255,255,255,0.07);
   }
 
   .border-visible {
-    border-color: rgba(42, 34, 24, 0.18);
+    border-color: rgba(255,255,255,0.14);
   }
 
-  /* Kelsey-style rectangular outline button */
   .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 2rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'basis33', monospace;
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    border: 1px solid rgba(42,34,24,0.3);
-    background: transparent;
-    color: #2A2218;
-    transition: background 0.25s, color 0.25s, border-color 0.25s;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05);
+    color: #FFFFFF;
+    transition: background 0.25s, border-color 0.25s;
+    backdrop-filter: blur(4px);
   }
   .btn-outline:hover {
-    background: #2A2218;
-    color: #FFFFFF;
-    border-color: #2A2218;
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.6);
   }
 
   .btn-outline-light {
@@ -129,19 +125,20 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 2rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'basis33', monospace;
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.5);
-    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.05);
     color: #FFFFFF;
     transition: background 0.25s, border-color 0.25s;
+    backdrop-filter: blur(4px);
   }
   .btn-outline-light:hover {
-    background: rgba(255,255,255,0.12);
-    border-color: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.6);
   }
 
   .noise::after {

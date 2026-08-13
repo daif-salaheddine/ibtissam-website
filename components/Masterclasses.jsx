@@ -34,36 +34,36 @@ export default function Masterclasses() {
       id="masterclasses"
       ref={sectionRef}
       className="py-28 md:py-36"
-      style={{ background: '#FFFFFF' }}
+      style={{ background: '#000000' }}
     >
       <div className="px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">03</span>
         </div>
-        <h2 data-reveal className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#2A2218' }}>
+        <h2 data-reveal className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#FFFFFF' }}>
           Signature masterclasses
         </h2>
-        <p data-reveal className="font-dm text-base max-w-[600px] leading-[1.65] mb-16" style={{ color: '#9A8E84' }}>
+        <p data-reveal className="font-dm text-base max-w-[600px] leading-[1.65] mb-16" style={{ color: 'rgba(255,255,255,0.5)' }}>
           Two flagship programs. Available in English, French, and Arabic.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(42,34,24,0.06)' }}>
+        <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(255,255,255,0.06)' }}>
           {masterclasses.map((mc, i) => (
-            <div key={i} data-reveal className="p-10 md:p-14 flex flex-col" style={{ background: '#FFFFFF' }}>
-              <div className="font-mono text-[0.75rem] tracking-[0.14em] uppercase mb-6" style={{ color: '#5C7A68' }}>
+            <div key={i} data-reveal className="p-10 md:p-14 flex flex-col" style={{ background: '#0B0B0B' }}>
+              <div className="font-pixel text-[0.68rem] tracking-widest uppercase mb-6" style={{ color: 'rgba(196,151,58,0.7)' }}>
                 {mc.num} · {mc.tag}
               </div>
 
-              <h3 className="font-cormorant font-semibold leading-[1.3] mb-6" style={{ fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)', color: '#2A2218' }}>
+              <h3 className="font-cormorant font-semibold leading-[1.3] mb-6" style={{ fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)', color: '#FFFFFF' }}>
                 {mc.title}
               </h3>
 
               <div className="w-8 h-[1px] mb-8" style={{ background: 'rgba(196,151,58,0.4)' }} />
 
-              <p className="font-dm text-base leading-[1.7] mb-4 flex-1 max-w-[600px]" style={{ color: '#5A5048' }}>
+              <p className="font-dm text-base leading-[1.7] mb-4 flex-1 max-w-[600px]" style={{ color: 'rgba(255,255,255,0.75)' }}>
                 {mc.preview}
               </p>
-              <p className="font-dm text-base leading-[1.65] mb-10 max-w-[600px]" style={{ color: '#9A8E84' }}>
+              <p className="font-dm text-base leading-[1.65] mb-10 max-w-[600px]" style={{ color: 'rgba(255,255,255,0.45)' }}>
                 {mc.body}
               </p>
 
@@ -71,8 +71,8 @@ export default function Masterclasses() {
                 {mc.chips.map(chip => (
                   <span
                     key={chip}
-                    className="font-mono text-[0.75rem] tracking-[0.1em] uppercase px-3 py-1.5"
-                    style={{ color: '#5C7A68', background: 'rgba(90,112,96,0.07)', border: '1px solid rgba(90,112,96,0.22)' }}
+                    className="font-pixel text-[0.65rem] tracking-widest uppercase px-3 py-1.5"
+                    style={{ color: 'rgba(255,255,255,0.7)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)' }}
                   >
                     {chip}
                   </span>
@@ -80,12 +80,12 @@ export default function Masterclasses() {
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="font-mono text-[0.75rem] tracking-[0.12em] uppercase" style={{ color: '#9A8E84' }}>Delivered in</span>
+                <span className="font-pixel text-[0.65rem] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>Delivered in</span>
                 {mc.langs.map(lang => (
                   <span
                     key={lang}
-                    className="font-mono text-[0.75rem] tracking-[0.1em] px-2 py-1"
-                    style={{ color: '#2A2218', border: '1px solid rgba(42,34,24,0.15)' }}
+                    className="font-pixel text-[0.65rem] tracking-widest px-2 py-1"
+                    style={{ color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.15)' }}
                   >
                     {lang}
                   </span>

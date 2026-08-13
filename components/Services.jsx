@@ -82,10 +82,10 @@ function ServiceCard({ svc, index }) {
       onMouseLeave={e => e.currentTarget.style.background = '#111009'}
     >
       <div className="flex items-start justify-between mb-4">
-        <span className="font-mono text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
+        <span className="font-pixel text-[0.55rem] tracking-[0.2em] uppercase" style={{ color: '#9E908A' }}>
           {svc.num}
         </span>
-        <span className="font-mono text-[0.5rem] tracking-[0.15em] uppercase" style={{ color: '#E8A020' }}>
+        <span className="font-pixel text-[0.5rem] tracking-[0.15em] uppercase" style={{ color: '#E8A020' }}>
           {svc.cat}
         </span>
       </div>
@@ -114,7 +114,7 @@ function ServiceCard({ svc, index }) {
 
       <button
         onClick={() => setOpen(o => !o)}
-        className="font-mono text-[0.55rem] tracking-[0.18em] uppercase mt-auto self-start transition-colors duration-300 hover:text-amber"
+        className="font-pixel text-[0.55rem] tracking-[0.18em] uppercase mt-auto self-start transition-colors duration-300 hover:text-amber"
         style={{ color: '#9E908A' }}
       >
         {open ? 'Less ↑' : 'Details ↓'}

@@ -35,33 +35,24 @@ export default function Contact() {
       id="contact"
       ref={sectionRef}
       className="py-32 md:py-40 relative overflow-hidden"
-      style={{ background: '#4B6147' }}
+      style={{ background: '#000000' }}
     >
-      {/* Background watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden>
-        <span
-          className="font-cormorant font-light leading-none whitespace-nowrap"
-          style={{ fontSize: 'clamp(6rem, 22vw, 20rem)', color: 'rgba(255,255,255,0.04)', letterSpacing: '-0.02em' }}
-        >
-          Ibtissam
-        </span>
-      </div>
-
       <div className="relative z-10 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto w-full">
+
         {/* Sec label */}
         <div data-reveal className="flex items-center gap-4 mb-12">
-          <span className="sec-num-light">08</span>
-          <span className="font-mono text-[0.8rem] tracking-[0.15em] uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <span className="sec-num">08</span>
+          <span className="font-pixel text-[0.75rem] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
             Start a Conversation
           </span>
         </div>
 
-        {/* Two-column: name/CTA left — quote/contact right */}
+        {/* Two-column */}
         <div className="grid lg:grid-cols-[3fr_2fr] gap-12 lg:gap-24 items-start">
 
           {/* Left: display name + creds + CTA */}
           <div>
-            <div data-reveal className="font-mono text-[0.8rem] tracking-[0.16em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <div data-reveal className="font-pixel text-[0.75rem] tracking-widest uppercase mb-6" style={{ color: 'rgba(255,255,255,0.4)' }}>
               {contact.eyebrow}
             </div>
 
@@ -69,12 +60,12 @@ export default function Contact() {
               <div className="font-cormorant font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)', color: '#FFFFFF' }}>
                 Ibtissam
               </div>
-              <div className="font-cormorant italic font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)', color: '#EDD9A3' }}>
+              <div className="font-cormorant italic font-semibold leading-[0.9] block" style={{ fontSize: 'clamp(3rem, 9vw, 5.5rem)', color: '#C4973A' }}>
                 Daif
               </div>
             </div>
 
-            <p data-reveal className="font-mono text-[0.8rem] tracking-[0.14em] uppercase mb-12" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            <p data-reveal className="font-pixel text-[0.72rem] tracking-widest uppercase mb-12" style={{ color: 'rgba(255,255,255,0.4)' }}>
               {contact.creds}
             </p>
 
@@ -93,7 +84,7 @@ export default function Contact() {
             <blockquote
               data-reveal
               className="font-cormorant italic font-light leading-relaxed mb-12"
-              style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: 'rgba(255,255,255,0.75)' }}
+              style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: 'rgba(255,255,255,0.65)' }}
             >
               {contact.quote}
             </blockquote>
@@ -101,29 +92,29 @@ export default function Contact() {
             <div
               data-reveal
               className="grid grid-cols-2 gap-6 pt-8 border-t"
-              style={{ borderColor: 'rgba(255,255,255,0.12)' }}
+              style={{ borderColor: 'rgba(255,255,255,0.08)' }}
             >
               <div>
-                <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Phone</div>
-                <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="font-dm text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.35)' }}>Phone</div>
+                <span className="font-dm text-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {contact.phone}
-                </a>
+                </span>
               </div>
               <div>
-                <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Email</div>
-                <a href={`mailto:${contact.email}`} className="font-dm text-sm transition-colors duration-300 break-all" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.35)' }}>Email</div>
+                <a href={`mailto:${contact.email}`} className="font-dm text-sm transition-colors duration-300 break-all" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {contact.email}
                 </a>
               </div>
               <div>
-                <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>LinkedIn</div>
-                <a href={`https://${contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="font-dm text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.35)' }}>LinkedIn</div>
+                <a href={`https://${contact.linkedin}`} target="_blank" rel="noopener noreferrer" className="font-dm text-sm transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {contact.linkedin}
                 </a>
               </div>
               <div>
-                <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-2" style={{ color: 'rgba(255,255,255,0.45)' }}>Based Between</div>
-                <span className="font-dm text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>{contact.location}</span>
+                <div className="font-pixel text-[0.68rem] tracking-widest uppercase mb-2" style={{ color: 'rgba(255,255,255,0.35)' }}>Based Between</div>
+                <span className="font-dm text-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>{contact.location}</span>
               </div>
             </div>
           </div>

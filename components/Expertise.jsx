@@ -64,7 +64,7 @@ export default function Expertise() {
         {/* Section label */}
         <div className="absolute top-20 left-6 md:left-12 z-10 flex items-center gap-4">
           <span className="sec-num-light">02</span>
-          <span className="font-mono text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <span className="font-pixel text-[0.6rem] tracking-[0.2em] uppercase hidden md:block" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Three Pillars, Integrated by Design
           </span>
         </div>
@@ -115,7 +115,7 @@ function PillarCard({ pillar, index, mobile = false }) {
               {pillar.tags.map(tag => (
                 <span
                   key={tag}
-                  className="font-mono text-[0.75rem] tracking-[0.12em] uppercase px-2.5 py-1"
+                  className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase px-2.5 py-1"
                   style={{ color: 'rgba(255,255,255,0.8)', border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.08)' }}
                 >
                   {tag}
@@ -129,13 +129,13 @@ function PillarCard({ pillar, index, mobile = false }) {
             >
               {pillar.title}
             </h2>
-            <div className="font-mono text-[0.8rem] tracking-[0.15em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <div className="font-pixel text-[0.8rem] tracking-[0.15em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
               {pillar.sub}
             </div>
 
             {/* Outcome */}
             <div className="p-5 border-l-2" style={{ borderColor: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.08)' }}>
-              <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-1.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <div className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase mb-1.5" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 Outcome
               </div>
               <p className="font-dm text-base leading-[1.65]" style={{ color: 'rgba(255,255,255,0.85)' }}>
@@ -147,7 +147,7 @@ function PillarCard({ pillar, index, mobile = false }) {
 
         {/* Right */}
         <div>
-          <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <div className="font-pixel text-[0.75rem] tracking-[0.12em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Core Capabilities
           </div>
           <ul className="space-y-3">

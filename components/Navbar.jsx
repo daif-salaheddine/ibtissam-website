@@ -13,6 +13,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const navRef = useRef(null)
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('')
 
   useEffect(() => {
@@ -34,7 +35,10 @@ export default function Navbar() {
 
   const scrollTo = (e, href) => {
     e.preventDefault()
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    setMenuOpen(false)
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    }, menuOpen ? 300 : 0)
   }
 
   return (
@@ -42,31 +46,32 @@ export default function Navbar() {
       ref={navRef}
       className="fixed top-0 inset-x-0 z-[200] transition-all duration-500"
       style={{
-        background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
+        background: scrolled ? 'rgba(0,0,0,0.92)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(42,34,24,0.08)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
       }}
     >
-      <div className="px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto h-16 flex items-center justify-between">
+      <div className="px-5 sm:px-6 md:px-10 lg:px-14 max-w-[1800px] mx-auto h-16 flex items-center justify-between">
+
         {/* Brand */}
         <a
           href="#hero"
           onClick={e => scrollTo(e, '#hero')}
           className="font-cormorant text-xl tracking-wide transition-colors duration-500"
-          style={{ color: scrolled ? '#2A2218' : '#FFFFFF', fontWeight: 400 }}
+          style={{ color: '#FFFFFF', fontWeight: 400 }}
         >
           Ibtissam <span style={{ color: '#C4973A' }}>Daif</span>
         </a>
 
-        {/* Links */}
-        <nav className="hidden md:flex items-center gap-10">
+        {/* Desktop links */}
+        <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
             <a
               key={href}
               href={href}
               onClick={e => scrollTo(e, href)}
-              className="font-mono text-[0.8rem] tracking-[0.16em] uppercase transition-colors duration-300"
-              style={{ color: active === href ? '#C4973A' : scrolled ? '#9A8E84' : 'rgba(255,255,255,0.7)' }}
+              className="font-pixel text-[0.75rem] tracking-widest uppercase transition-opacity hover:opacity-70"
+              style={{ color: active === href ? '#C4973A' : 'rgba(255,255,255,0.7)' }}
             >
               {label}
             </a>
@@ -77,69 +82,78 @@ export default function Navbar() {
         <a
           href="#contact"
           onClick={e => scrollTo(e, '#contact')}
-          className="hidden md:inline-flex items-center font-mono text-[0.8rem] font-medium tracking-[0.15em] uppercase px-5 py-2.5 transition-all duration-300"
+          className="hidden md:inline-flex items-center font-pixel text-[0.75rem] tracking-widest uppercase px-5 py-2.5 transition-all duration-300"
           style={{
-            border: scrolled ? '1px solid rgba(42,34,24,0.3)' : '1px solid rgba(255,255,255,0.5)',
-            color: scrolled ? '#2A2218' : '#FFFFFF',
+            border: '1px solid rgba(255,255,255,0.3)',
+            color: '#FFFFFF',
           }}
         >
           Contact
         </a>
 
-        <MobileMenu />
-      </div>
-    </header>
-  )
-}
-
-function MobileMenu() {
-  const [open, setOpen] = useState(false)
-
-  const scrollTo = (href) => {
-    setOpen(false)
-    setTimeout(() => {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-    }, 300)
-  }
-
-  return (
-    <div className="md:hidden">
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="flex flex-col gap-[5px] p-2"
-        aria-label="Toggle menu"
-      >
-        {[0, 1, 2].map(i => (
-          <span
-            key={i}
-            className="block w-6 h-[1.5px] transition-all duration-300"
-            style={{
-              background: '#2A2218',
-              transform: open
-                ? i === 0 ? 'translateY(6.5px) rotate(45deg)' : i === 2 ? 'translateY(-6.5px) rotate(-45deg)' : 'scaleX(0)'
-                : 'none',
-            }}
-          />
-        ))}
-      </button>
-
-      {open && (
-        <div
-          className="fixed inset-0 top-16 z-[190] flex flex-col items-center justify-center gap-8"
-          style={{ background: 'rgba(245,237,224,0.98)', backdropFilter: 'blur(20px)' }}
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden p-2 hover:opacity-70 transition-opacity"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
+          style={{ color: '#FFFFFF' }}
         >
-          {NAV_LINKS.map(({ label, href }) => (
-            <button
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile fullscreen menu */}
+      <div
+        className="fixed inset-0 z-50 flex flex-col transition-all duration-500"
+        style={{
+          transitionTimingFunction: 'cubic-bezier(0.16,1,0.3,1)',
+          background: 'rgba(0,0,0,0.97)',
+          backdropFilter: 'blur(16px)',
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? 'auto' : 'none',
+        }}
+      >
+        <div className="flex items-center justify-between px-6 py-6">
+          <span className="font-cormorant text-xl" style={{ color: '#FFFFFF', fontWeight: 400 }}>
+            Ibtissam <span style={{ color: '#C4973A' }}>Daif</span>
+          </span>
+          <button
+            className="p-2 hover:opacity-70 transition-opacity"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            style={{ color: '#FFFFFF' }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <line x1="4" y1="4" x2="20" y2="20" />
+              <line x1="20" y1="4" x2="4" y2="20" />
+            </svg>
+          </button>
+        </div>
+
+        <nav className="flex flex-col items-center justify-center flex-1 gap-8">
+          {NAV_LINKS.map(({ label, href }, i) => (
+            <a
               key={href}
-              onClick={() => scrollTo(href)}
-              className="font-cormorant text-4xl font-light"
-              style={{ color: '#2A2218' }}
+              href={href}
+              onClick={e => scrollTo(e, href)}
+              className="font-cormorant text-4xl font-light transition-all duration-500"
+              style={{
+                transitionTimingFunction: 'cubic-bezier(0.16,1,0.3,1)',
+                transitionDelay: menuOpen ? `${100 + i * 60}ms` : '0ms',
+                opacity: menuOpen ? 1 : 0,
+                transform: menuOpen ? 'translateY(0)' : 'translateY(16px)',
+                color: '#FFFFFF',
+              }}
             >
               {label}
-            </button>
+            </a>
           ))}
-        </div>
-      )}
-    </div>
+        </nav>
+      </div>
+    </header>
   )
 }

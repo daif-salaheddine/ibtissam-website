@@ -57,22 +57,22 @@ export default function Timeline() {
     <section
       id="timeline"
       ref={sectionRef}
-      style={{ background: '#F5EDE0' }}
+      style={{ background: '#000000' }}
     >
       <div className="py-28 md:py-36 px-8 md:px-16 lg:px-20 xl:px-28 max-w-[1800px] mx-auto">
         <div className="flex items-center gap-4 mb-6">
           <span className="sec-num">05</span>
         </div>
-        <h2 className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#2A2218' }}>
+        <h2 className="font-cormorant font-semibold leading-[1.2] mb-4" style={{ fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: '#FFFFFF' }}>
           What I&apos;ve built and changed
         </h2>
-        <p className="font-dm text-base leading-[1.65] mb-16 max-w-xl" style={{ color: '#9A8E84' }}>
+        <p className="font-dm text-base leading-[1.65] mb-16 max-w-xl" style={{ color: 'rgba(255,255,255,0.5)' }}>
           Selected roles focused on outcomes and strategic contributions.
         </p>
 
         <div className="relative">
           {/* Vertical line — desktop only */}
-          <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-[1px] origin-top" style={{ background: 'rgba(42,34,24,0.1)' }}>
+          <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-[1px] origin-top" style={{ background: 'rgba(255,255,255,0.07)' }}>
             <div
               ref={lineRef}
               className="absolute inset-0 origin-top will-change-transform"
@@ -81,7 +81,7 @@ export default function Timeline() {
           </div>
 
           {/* Mobile: single left border line */}
-          <div className="absolute md:hidden left-0 top-0 bottom-0 w-[1px]" style={{ background: 'rgba(42,34,24,0.12)' }} />
+          <div className="absolute md:hidden left-0 top-0 bottom-0 w-[1px]" style={{ background: 'rgba(255,255,255,0.1)' }} />
 
           <div className="space-y-0">
             {rows.map((pair, rowIdx) => (
@@ -89,7 +89,7 @@ export default function Timeline() {
                 {/* Center dot for this row — desktop */}
                 <div
                   className="absolute hidden md:block left-1/2 top-1 w-3 h-3 rounded-full border-2 -translate-x-1/2 z-10"
-                  style={{ borderColor: '#C4973A', background: pair[0]?.metric ? '#C4973A' : '#F5EDE0' }}
+                  style={{ borderColor: '#C4973A', background: pair[0]?.metric ? '#C4973A' : '#000000' }}
                 />
 
                 {/* LEFT cell */}
@@ -100,7 +100,7 @@ export default function Timeline() {
                   {/* Mobile dot */}
                   <div
                     className="absolute md:hidden left-0 top-1 w-2.5 h-2.5 rounded-full border-2 -translate-x-1/2"
-                    style={{ borderColor: '#C4973A', background: pair[0]?.metric ? '#C4973A' : '#F5EDE0' }}
+                    style={{ borderColor: '#C4973A', background: pair[0]?.metric ? '#C4973A' : '#000000' }}
                   />
                   <EntryContent item={pair[0]} align="left" />
                 </div>
@@ -126,28 +126,28 @@ function EntryContent({ item, align }) {
   if (!item) return null
   return (
     <div>
-      <div className="font-mono text-[0.75rem] tracking-[0.12em] uppercase mb-1" style={{ color: '#9A8E84' }}>{item.date}</div>
+      <div className="font-pixel text-[0.72rem] tracking-widest uppercase mb-1" style={{ color: 'rgba(255,255,255,0.4)' }}>{item.date}</div>
       <div className="font-cormorant font-semibold text-lg md:text-2xl mb-0.5" style={{ color: '#C4973A' }}>{item.org}</div>
-      <div className="font-mono text-[0.75rem] tracking-[0.1em] uppercase mb-4" style={{ color: '#9A8E84' }}>{item.place}</div>
+      <div className="font-pixel text-[0.72rem] tracking-widest uppercase mb-4" style={{ color: 'rgba(255,255,255,0.35)' }}>{item.place}</div>
 
-      <h3 className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug" style={{ color: '#2A2218' }}>
+      <h3 className="font-cormorant font-semibold text-xl md:text-2xl mb-3 leading-snug" style={{ color: '#FFFFFF' }}>
         {item.role}
       </h3>
 
       {item.metric && (
         <span
-          className="inline-block font-mono text-[0.75rem] tracking-[0.1em] uppercase px-3 py-1.5 mb-3"
-          style={{ color: '#3D6840', background: 'rgba(61,104,64,0.10)', border: '1px solid rgba(61,104,64,0.25)' }}
+          className="inline-block font-pixel text-[0.68rem] tracking-widest uppercase px-3 py-1.5 mb-3"
+          style={{ color: '#C4973A', background: 'rgba(196,151,58,0.08)', border: '1px solid rgba(196,151,58,0.25)' }}
         >
-          ↑ {item.metric}
+          {item.metric}
         </span>
       )}
 
-      <p className="font-dm text-base leading-relaxed" style={{ color: '#5A5048' }}>{item.preview}</p>
-      <p className="font-dm text-base leading-[1.65] mt-2" style={{ color: '#9A8E84' }}>{item.body}</p>
+      <p className="font-dm text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>{item.preview}</p>
+      <p className="font-dm text-base leading-[1.65] mt-2" style={{ color: 'rgba(255,255,255,0.45)' }}>{item.body}</p>
 
       {item.photo && (
-        <div className="mt-5 overflow-hidden" style={{ border: '1px solid rgba(42,34,24,0.08)' }}>
+        <div className="mt-5 overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={item.photo} alt={`${item.org} — ${item.role}`} className="w-full block" style={{ filter: 'grayscale(10%)' }} />
         </div>
